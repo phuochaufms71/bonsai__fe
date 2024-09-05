@@ -1,0 +1,60 @@
+@use "../../components/scss/abtracts";
+@import "../../components/Common/Common.module.scss";
+
+.checkout__form {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+
+    &-title {
+        text-align: center;
+        color: #333;
+        font-weight: 500;
+        font-size: 1.8rem;
+    }
+
+    &-gr {
+        margin-top: 20px;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+
+        label {
+            color: #333;
+
+            span {
+                color: $secondary-color;
+            }
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #e6e6e6;
+            color: $fourary-color;
+            border-radius: 4px;
+            outline: none;
+            transition: 0.3s;
+
+            &::placeholder {
+                color: #959595;
+            }
+
+            &:focus {
+                border-color: $fourary-color;
+            }
+        }
+    }
+
+    &-btn {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+        background-color: #000;
+        margin-top: 20px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+}

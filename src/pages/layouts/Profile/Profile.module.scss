@@ -1,0 +1,35 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.profile {
+    margin: 50px 0;
+
+    @include abtracts.breakpoint(sm) {
+        margin-top: 30px;
+    }
+    
+    &__inner {
+        display: flex;
+        gap: 20px;
+
+        @include abtracts.breakpoint(md) {
+            gap: 30px;
+            flex-direction: column;
+        }
+    }
+
+    &__body {
+        width: calc(100% - 300px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include abtracts.breakpoint(lg) {
+            width: calc(100% - 250px);
+        }
+
+        @include abtracts.breakpoint(md) {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.payment {
+    margin: 50px 0;
+
+    &__title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    &__inner {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+    }
+
+    &__card-wrap-img {
+        width: 20%;
+        height: 20%;
+    }
+
+    &__card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__info {
+        &-wrap-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        &-logo {
+            width: 70px;
+        }
+    }
+
+    &__item {
+        margin-top: 20px;
+
+        &__title {
+            font-size: 1.7rem;
+        }
+
+        &-name {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-top: 3px;
+        }
+
+        &-number {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-top: 3px;
+        }
+
+        &-total {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-top: 3px;
+        }
+
+        &-content {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-top: 3px;
+        }
+    }
+
+    &__back {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $fourary-color;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+}

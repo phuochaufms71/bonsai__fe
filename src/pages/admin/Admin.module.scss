@@ -1,0 +1,195 @@
+@use "../../components/scss/abtracts";
+@import "../../components/Common/Common.module.scss";
+
+.admin {
+    &__inner {
+        display: flex;
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &__wrap-img {
+        margin: 20px 0;
+        width: 100%;
+        border-radius: 20px;
+        position: relative;
+        padding: 0 20px;
+
+        @include abtracts.breakpoint(xl) {
+            padding: 0;
+        }
+    }
+
+    &__title {
+        max-width: 380px;
+        position: absolute;
+        top: 100px;
+        left: 60px;
+        font-size: 3rem;
+        font-family: "Merienda";
+        color: #fff;
+        font-weight: 700;
+
+        @include abtracts.breakpoint(lg) {
+            max-width: 300px;
+            top: 50px;
+            left: 30px;
+            font-size: 2.4rem;
+            font-weight: 600;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            top: 50px;
+            left: 20px;
+            max-width: 150px;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+    }
+
+    &__img {
+        border-radius: 20px;
+        display: block;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        margin: 0 auto;
+
+        @include abtracts.breakpoint(lg) {
+        height: 200px;
+        }
+
+        @include abtracts.breakpoint(sm) {
+        height: 180px;
+        }
+    }
+
+    &__total {
+        margin: 0 40px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        @include abtracts.breakpoint(lg) {
+            gap: 30px;
+            margin: 0;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            flex-direction: column;
+        }
+
+        &-products {
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 57px -20px #50e3c2;
+            padding: 20px;
+
+            @include abtracts.breakpoint(sm) {
+                width: 100%;
+            }
+        }
+
+        &-products--top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-wrap-img {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &-img-rec {
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            display: block;
+
+            @include abtracts.breakpoint(md) {
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+        &-title {
+            color: #333;
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 1.7rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &-img-more {
+            width: 25px;
+            height: 25px;
+            object-fit: cover;
+            display: block;
+
+            @include abtracts.breakpoint(md) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &-products--bottom {
+            margin-top: 20px;
+
+            @include abtracts.breakpoint(md) {
+                margin-top: 10px;
+            }
+        }
+
+        &-statistic {
+            font-size: 3rem;
+            font-weight: 600;
+            font-family: "Merienda";
+            color: $secondary-color;
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 2.6rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 2.2rem;
+            }
+
+            span {
+                font-size: 1.7rem;
+                font-weight: 400;
+                font-family: "Roboto";
+                color: #333;
+            }
+        }
+
+        &-compared-percent {
+            margin-top: 20px;
+            color: #50e3c2;
+            font-weight: 500;
+            font-weight: 400;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.5rem;
+                margin-top: 10px;
+            }
+        }
+
+        &-chart {
+            margin: 50px auto;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

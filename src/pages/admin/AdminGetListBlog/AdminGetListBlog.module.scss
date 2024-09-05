@@ -1,0 +1,60 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.get-list-blog {
+    padding: 20px;
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    &__item {
+        width: 300px;
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    &__wrap-img {
+        overflow: hidden;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__img {
+        border-radius: 4px 4px 0 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    &__body {
+        padding: 10px;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+    }
+
+    &__desc {
+        margin-top: 10px;
+        font-size: 1.5rem;
+        color: #959595;
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

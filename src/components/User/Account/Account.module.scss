@@ -1,0 +1,97 @@
+@use "../../scss/abtracts";
+@import "../../Common/Common.module.scss";
+
+.account {
+    width: 100%;
+    box-shadow: 0 10px 50px #e6e6e6;
+    border-radius: 4px;
+    padding: 20px;
+
+    &__title {
+        text-align: center;
+        font-size: 3rem;
+        font-family: "Merienda";
+        font-weight: 800;
+        margin: 20px 0;
+        color: $secondary-color;
+    }
+
+    &__body {
+        display: flex;
+        gap: 40px;
+
+        @include abtracts.breakpoint(lg) {
+            flex-direction: column;
+        }
+
+        @include abtracts.breakpoint(md) {
+            flex-direction: row;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            flex-direction: column;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 30px;
+    }
+
+    &__gr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+        border-bottom: 1.5px solid #e6e6e6;
+
+        &--title {
+            font-size: 1.4rem;
+            color: #999;
+            font-weight: 500;
+            padding-left: 10px;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.3rem;
+            }
+        }
+
+        &--content {
+            padding: 10px;
+            width: 100%;
+            outline: none;
+            color: #333;
+            font-weight: 500;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__avatar {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        display: block;
+        border: 2px solid #e6e6e6;
+
+        @include abtracts.breakpoint(lg) {
+            margin: 0 auto;
+        }
+    }
+
+    &__edit {
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 1.7rem;
+        font-weight: 500;
+        background-color: $fourary-color;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+    }
+}

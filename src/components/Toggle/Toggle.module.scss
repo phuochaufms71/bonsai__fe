@@ -1,0 +1,39 @@
+.toggle {
+    top: 90px;
+    position: absolute;
+    right: 20px;
+
+    &__input {
+        visibility: hidden;
+
+        &+label {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            cursor: pointer;
+            
+            &::before {
+                content: "";
+                width: 50px;
+                height: 25px;
+                border-radius: 99px;
+                background-color: #ccc;
+                margin-right: 10px;
+            }
+            
+            &::after {
+                content: "";
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                background-color: #333;
+                position: absolute;
+                transition: 0.5s;
+            }
+        }
+
+        &:checked+label::after {
+            transform: translateX(100%);
+        }
+    }
+}

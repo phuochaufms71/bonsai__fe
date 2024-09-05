@@ -1,0 +1,31 @@
+@use "../scss/abtracts";
+@import "../Common/Common.module.scss";
+
+.admin-footer {
+    border-top: 1px solid $border-color;
+
+    &__copy-right {
+        background: lin;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 1.8rem;
+        color: #9a9a9a;
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 1.7rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.6rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.5rem;
+        }
+
+        span {
+            color: $secondary-color;
+            font-weight: 500;
+        }
+    }
+}

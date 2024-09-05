@@ -1,0 +1,638 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.home {
+    &__inner {
+        overflow: hidden;
+    }
+
+    &__content {
+        margin-top: 150px;
+        
+        @include abtracts.breakpoint(sm) {
+            margin-top: 85px;
+        }
+
+        &--title {
+            text-align: center;
+            font-size: 4rem;
+            font-family: "Merienda";
+            font-weight: 800;
+            line-height: 1.6;
+
+            @include abtracts.breakpoint(xl) {
+                font-size: 3.4rem;
+            }
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 2.6rem;
+                padding: 30px 0 20px 30px;
+            }
+
+            @include abtracts.breakpoint(md) {
+                text-align: center;
+                font-size: 2rem;
+                padding: 20px 0;
+            }
+        }
+
+        &--sub-title {
+            color: $fourary-color;
+            font-size: 4rem;
+            font-weight: 800;
+            
+            @include abtracts.breakpoint(xl) {
+                font-size: 3.4rem;
+            }
+        
+            @include abtracts.breakpoint(lg) {
+                font-size: 2.6rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 2rem;
+            }
+        }
+
+        &--desc {
+            color: #333;
+            line-height: 1.7;
+            font-size: 1.8rem;
+            text-align: center;
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 1.6rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.5rem;
+            }
+        }
+
+        &-wrap-img {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            @include abtracts.breakpoint(sm) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        &-img {
+            width: 400px;
+            object-fit: cover;
+            display: block;
+
+            @include abtracts.breakpoint(md) {
+                width: 300px;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                width: 250px;
+            }
+        }
+
+        &--btn {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            @include abtracts.breakpoint(lg) {
+                padding: 0 0 20px 20px;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                gap: 20px
+            }
+
+            &-order {
+                text-align: center;
+                border: none;
+                outline: none;
+                background-color: $primary-color;
+                color: #fff;
+                padding: 10px;
+                min-width: 160px;
+                font-size: 1.8rem;
+                border-radius: 99px;
+                font-weight: 500;
+                cursor: pointer;
+
+                @include abtracts.breakpoint(md) {
+                    font-size: 1.6rem;
+                    min-width: 120px;
+                }
+
+                @include abtracts.breakpoint(sm) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            &-book {
+                text-align: center;
+                border: 1px solid $primary-color;
+                outline: none;
+                background-color: transparent;
+                color: $primary-color;
+                padding: 10px;
+                min-width: 160px;
+                font-size: 1.8rem;
+                border-radius: 99px;
+                font-weight: 500;
+                cursor: pointer;
+
+                @include abtracts.breakpoint(md) {
+                    font-size: 1.6rem;
+                    min-width: 120px;
+                }
+
+                @include abtracts.breakpoint(sm) {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    &__banner {
+        margin-top: 70px;
+
+        @include abtracts.breakpoint(md) {
+            margin-top: 50px;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            margin-top: 30px;
+        }
+    }
+
+    .carousel {
+        display: flex;
+        justify-content: center;
+
+        &__img {
+            border-radius: 8px;
+            width: 500px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__category {
+        &-top {
+            margin: 50px 0 0 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @include abtracts.breakpoint(md) {
+                margin: 70px 0 0 20px;
+            }
+        }
+
+        &-icon {
+            display: block;
+            width: 25px;
+            height: 25px;
+            object-fit: cover;
+
+            @include abtracts.breakpoint(md) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &-title {
+            color: $fourary-color;
+            font-size: 2rem;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.8rem;
+            }
+        }
+
+        &-list-img {
+            margin: 30px 0;
+
+            @include abtracts.breakpoint(sm) {
+                margin-top: 20px;
+            }
+        }
+
+        &-wrap-img {
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid $fourary-color;
+        }
+
+        &-img {
+            margin: 0 auto;
+            display: block;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        &-name {
+            text-align: center;
+            color: $fourary-color;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+    }
+
+    &__about {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        @include abtracts.breakpoint(md) {
+            flex-direction:column;
+            gap: 40px;
+        }        
+
+        &-img {
+            display: block;
+            width: 450px;
+
+            @include abtracts.breakpoint(xl) {
+                width: 400px;
+            }
+
+            @include abtracts.breakpoint(lg) {
+                width: 350px;
+            }
+
+            @include abtracts.breakpoint(md) {
+                width: 100%;
+            }
+        }
+
+        &-title {
+            font-size: 4rem;
+            font-family: "Merienda";
+            font-weight: 800;
+
+            @include abtracts.breakpoint(xl) {
+                font-size: 3.6rem;
+            }
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 3rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 2.6rem;
+                text-align: center;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 2rem;
+            }
+        }
+
+        &-sub-title {
+            color: $fourary-color;
+            font-size: 4rem;
+            font-weight: 800;
+
+            @include abtracts.breakpoint(xl) {
+                font-size: 3.6rem;
+            }
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 3rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 2.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 2rem;
+            }
+        }
+
+        &-desc {
+            margin: 20px 0;
+            color: #333;
+            line-height: 1.6;
+            font-size: 1.8rem;
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 1.6rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        &-item {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+
+            @include abtracts.breakpoint(md) {
+                margin: 0 auto;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                margin: 0 auto;
+            }
+
+            &--check {
+                width: 30px;
+                height: 30px;
+                display: block;
+                object-fit: cover;
+
+                @include abtracts.breakpoint(md) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+            
+            &--content {
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: $secondary-color;
+
+                @include abtracts.breakpoint(md) {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        &-btn--read {
+            margin-top: 30px;
+            display: block;
+            border: 1px solid $primary-color;
+            outline: none;
+            background-color: transparent;
+            color: $primary-color;
+            padding: 10px;
+            width: 160px;
+            font-size: 1.8rem;
+            border-radius: 99px;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+
+            @include abtracts.breakpoint(lg) {
+                width: 140px;
+                font-size: 1.7rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                min-width: 120px;
+                font-size: 1.5rem;
+                margin: 30px auto 0;
+            }
+        }
+    }
+    
+    &__delivery {
+        margin-top: 50px;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+
+        @include abtracts.breakpoint(md) {
+            flex-direction: column;
+        }
+
+        &--title {
+            font-size: 4rem;
+            font-family: "Merienda";
+            font-weight: 800;
+            max-width: 500px;
+
+            @include abtracts.breakpoint(xl) {
+                font-size: 3.6rem;
+            }
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 3rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                text-align: center;
+                max-width: 100%;
+                font-size: 2.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 2rem;
+            }
+
+            span {
+                color: $fourary-color;
+            }
+        }
+
+        &--desc {
+            margin-top: 30px;
+            color: #333;
+            line-height: 1.6;
+            font-size: 1.8rem;
+            max-width: 500px;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+                max-width: 700px;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        &-body {
+            margin-top: 30px;
+
+            &--item {
+                &:nth-child(2) {
+                    margin-top: 30px;
+
+                    p {
+                        margin-top: 10px;
+                        color: #333;
+                        line-height: 1.7;
+                        font-size: 1.8rem;
+
+                        @include abtracts.breakpoint(sm) {
+                            font-size: 1.5rem;
+                        }
+
+                        span {
+                            font-weight: 600;
+                            color: #333;
+                        }
+                    }
+                }
+
+                h3 {
+                    color: $secondary-color;
+                    font-weight: 500;
+                    font-size: 2.2rem;
+
+                    @include abtracts.breakpoint(md) {
+                        font-size: 2rem;
+                    }
+
+                    @include abtracts.breakpoint(sm) {
+                        font-size: 1.8rem;
+                    }
+                }
+
+                ol {
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    li {
+                        line-height: 1.7;
+                        font-size: 1.8rem;
+
+                        @include abtracts.breakpoint(sm) {
+                            font-size: 1.5rem;
+                        }
+
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-wrap-img {
+            width: 500px;
+
+            @include abtracts.breakpoint(md) {
+                width: 400px;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                width: 250px;
+            }
+        }
+
+        &-img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// Feedback
+.feedback {
+    margin: 100px 0;
+
+    &__title {
+        font-size: 4rem;
+        font-family: "Merienda";
+        font-weight: 800;
+        text-align: center;
+
+        @include abtracts.breakpoint(xl) {
+            font-size: 3.6rem;
+        }
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 3rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2.6rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 2rem;
+        }
+
+        span {
+            color: $fourary-color;
+        }
+    }
+
+    &__desc {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+        line-height: 1.6;
+        color: #333;
+        font-size: 1.8rem;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.6rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__list {
+        margin-top: 20px;
+        display: grid;
+        gap: 40px;
+        grid-template-columns: 1fr 1fr;
+
+        @include abtracts.breakpoint(md) {
+            grid-template-columns: 1fr;
+            gap: 20px
+        }
+    }
+
+    &__item {
+        background: url('../../../components/images/bg-feedback.jpg') center/cover no-repeat;
+        border: 1px solid #959595;
+        padding: 30px;
+        border-radius: 10px;
+
+        &-desc {
+            color: #f1f1f1;
+            line-height: 1.6;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.5rem;
+            }
+
+        }
+
+        &-name {
+            color: $fourary-color;
+            text-align: right;
+            margin-top: 10px;
+            font-size: 1.8rem;
+            font-weight: 500;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

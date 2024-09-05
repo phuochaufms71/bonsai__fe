@@ -1,0 +1,62 @@
+@use "../../../../components/scss/abtracts";
+@import "../../../../components/Common/Common.module.scss";
+
+.blog-item {
+    margin: 150px auto 100px;
+
+    @include abtracts.breakpoint(md) {
+        margin: 50px 0;
+    }
+
+    &__title {
+        font-size: 2.6rem;
+        color: $secondary-color;
+        font-family: "Merienda";
+        font-weight: 800;
+        text-align: center;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.8rem;
+        }
+    }
+    
+    &__wrap-img {
+        margin: 30px auto;
+        border-radius: 10px;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid $fourary-color;
+
+        @include abtracts.breakpoint(md) {
+            height: 200px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: 0.3s;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    &__content {
+        color: #959595;
+        line-height: 1.8;
+        margin-top: 20px;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.5rem;
+            text-align: justify;
+        }
+    }
+}

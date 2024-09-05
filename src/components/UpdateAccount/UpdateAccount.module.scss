@@ -1,0 +1,73 @@
+@use "../scss/abtracts";
+@import "../Common/Common.module.scss";
+
+.update-account {
+    width: 100%;
+    box-shadow: 0 10px 50px #e6e6e6;
+    border-radius: 4px;
+    padding: 20px;
+
+    &__title {
+        text-align: center;
+        font-size: 3rem;
+        font-family: "Merienda";
+        font-weight: 800;
+        margin: 20px 0;
+        color: $secondary-color;
+    }
+
+    &__body {
+        display: flex;
+        gap: 40px;
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 30px;
+    }
+
+    &__gr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+
+        &--title {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        &--content {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #e6e6e6;
+            outline: none;
+            color: $secondary-color;
+            font-weight: 500;
+        }
+    }
+
+    &__avatar {
+        margin: 10px auto;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        display: block;
+        border: 2px solid #e6e6e6;
+    }
+
+    &__edit {
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 1.7rem;
+        font-weight: 500;
+        background-color: $fourary-color;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+    }
+}

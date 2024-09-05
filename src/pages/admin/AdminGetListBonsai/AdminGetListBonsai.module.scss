@@ -1,0 +1,241 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.get-list-bonsai__empty {
+    position: relative;
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 500;
+
+    span {
+        color: $secondary-color;
+        margin-left: 5px;
+    }
+}
+
+.get_list_bonsai {
+    padding: 20px;
+
+    @include abtracts.breakpoint(sm) {
+        display: none;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 20px 0;
+        color: $secondary-color;
+        font-family: "Merienda";
+        font-size: 3rem;
+        font-weight: 800;
+    }
+
+    &__table {
+        border-collapse: collapse;
+        width: 100%;  
+    }
+
+    &__head {
+        color: $fourary-color;
+    }
+
+    &__th {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #DDD;
+    }
+
+    &__td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #DDD;
+    }
+
+    &__img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        display: block;
+        border-radius: 50%;
+        border: 2px solid $primary-color;
+    }
+
+    &__wrap {
+        position: relative;
+    }
+
+    &__item {
+        font-size: 1.6rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        padding: 20px;
+
+        &:last-child {
+            border-top: 1px solid #ededed;
+        }
+
+        &:hover {
+            background-color: #ededed;
+            cursor: pointer;
+        }
+
+        &-img {
+            width: 20px;
+            height: 20px;
+            display: block;
+            object-fit: cover;
+        }
+    }
+
+    &__more {
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+    }
+
+    &__action {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 2px 35px -7px $thusary-color;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        min-width: 150px;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+}
+
+// get list food mobie
+.get-list-bonsai-mobie {
+    display: none;
+    margin-top: 20px;
+
+    @include abtracts.breakpoint(sm) {
+        display: block;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        // gap: 40px;
+        background-color: $fourary-color;
+    }
+
+    &__th {
+        width: 25%;
+        padding: 10px 0;
+        color: #fff;
+
+    }
+
+    &__td {
+        padding: 8px 0;
+        width: 18%;
+        text-align: center;
+    }
+
+    &__img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        border: 1px solid $fourary-color;
+    }
+
+    &__more {
+        width: 15px;
+        height: 15px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+    }
+
+    &__name {
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #e6e6e6;
+        gap: 20px;
+    }
+
+    &__list {
+        background-color: $primary-color;
+        padding: 5px;
+    }
+
+    &__item {
+        font-size: 1.5rem;
+        padding: 5px;
+        color: #333;
+
+        span {
+            font-weight: 500;
+            color: $secondary-color;
+        }
+    }
+
+    &__action {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 45px rgba(0, 0, 0, 0.5);
+        z-index: 99;
+        min-width: 100px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 10px;
+        font-weight: 500;
+        cursor: pointer;
+
+        &-img {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
+
+.get_list_bonsai_mobie__icon {
+    color: $fourary-color;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.showBonsai {
+    rotate: 90deg;
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,90 @@
+@use "../src/components/scss/abtracts";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import "./components/Common/Common.module.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a, button, input, select, textarea {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+
+    @include abtracts.breakpoint(xl) {
+        margin: 0 30px;
+    }
+
+    @include abtracts.breakpoint(lg) {
+        margin: 0 20px;
+    }
+
+    @include abtracts.breakpoint(md) {
+        margin: 0 10px;
+    }
+}
+
+.content {
+    width: calc(100% - 300px);
+
+    @include abtracts.breakpoint(xl) {
+        width: calc(100% - 250px);
+    }
+
+    @include abtracts.breakpoint(lg) {
+        width: calc(100% - 200px);
+    }
+
+    @include abtracts.breakpoint(md) {
+        width: 100%;
+    }
+
+}
+
+//custom scrollbar
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary-color; 
+    border-radius: 4px;
+}
+  
+/* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #b30000; 
+// }

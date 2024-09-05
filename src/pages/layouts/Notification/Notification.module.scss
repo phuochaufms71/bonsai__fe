@@ -1,0 +1,174 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.notification {
+    margin: 50px auto;
+
+    @include abtracts.breakpoint(sm) {
+        margin: 30px auto;
+    }
+    
+    &__title {
+        font-size: 4rem;
+        color: $secondary-color;
+        font-family: "Merienda";
+        font-weight: 800;
+        text-align: center;
+
+        @include abtracts.breakpoint(xl) {
+            font-size: 3.6rem;
+        }
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 3rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2.6rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 2rem;
+        }
+    }
+    
+    &__list {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 10px 50px #e6e6e6;
+        margin: 30px auto 0;
+        width: 700px;
+
+        @include abtracts.breakpoint(md) {
+            width: 500px;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            width: 100%;
+        }
+    }
+
+    &__item {
+        display: flex;
+        gap: 20px;
+        padding: 30px;
+        transition: all linear 0.3s;
+
+        @include abtracts.breakpoint(lg) {
+            padding: 20px;
+        }
+
+        @include abtracts.breakpoint(md) {
+            padding: 10px;
+            gap: 10px;
+        }
+
+        &:hover {
+            background-color: #f1f8fe;
+        }
+
+        &:first-child {
+            .notification__item--icon {
+                width: 20px;
+                height: 20px;
+                color: #326e40;
+                padding: 15px;
+                border-radius: 50%;
+                background-color: #e1f6eb;
+
+                @include abtracts.breakpoint(md) {
+                    padding: 10px;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            .notification__item--icon {
+                font-size: 1.8rem;
+                width: 20px;
+                height: 20px;
+                color: #2d5cc4;
+                padding: 15px;
+                border-radius: 50%;
+                background-color: #dfedfc;
+
+                @include abtracts.breakpoint(md) {
+                    padding: 10px;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            .notification__item--icon {
+                font-size: 1.8rem;
+                width: 20px;
+                height: 20px;
+                color: #bb635e;
+                padding: 15px;
+                border-radius: 50%;
+                background-color: #faedec;
+
+                @include abtracts.breakpoint(md) {
+                    padding: 10px;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            .notification__item--icon {
+                font-size: 1.8rem;
+                width: 20px;
+                height: 20px;
+                color: #4e8761;
+                padding: 15px;
+                border-radius: 50%;
+                background-color: #e1f6eb;
+
+                @include abtracts.breakpoint(md) {
+                    padding: 10px;
+                }
+            }
+        }
+
+        &:nth-child(5) {
+            .notification__item--icon {
+                font-size: 1.8rem;
+                width: 20px;
+                height: 20px;
+                color: #ba7d30;
+                padding: 15px;
+                border-radius: 50%;
+                background-color: #fceed8;
+
+                @include abtracts.breakpoint(md) {
+                    padding: 10px;
+                }
+            }
+        }
+
+        &--gr {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        &--content {
+            font-size: 1.8rem;
+            color: #333;
+            font-weight: 500;
+            line-height: 1.6;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &--time {
+            color: #818181;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

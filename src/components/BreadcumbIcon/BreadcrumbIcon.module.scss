@@ -1,0 +1,10 @@
+@use "../scss/abtracts";
+@import "../Common/Common.module.scss";
+
+.icon {
+    color: $secondary-color;
+
+    @include abtracts.breakpoint(sm) {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,151 @@
+@use "../../scss/abtracts";
+@import "../../Common/Common.module.scss";
+
+.sidebar {
+    width: 300px;
+    border-right: 1px solid #e6e6e6;
+    
+    @include abtracts.breakpoint(xl) {
+        width: 250px;
+    }
+
+    @include abtracts.breakpoint(lg) {
+        width: 200px;
+    }
+    
+    @include abtracts.breakpoint(md) {
+        border: none;
+        width: 100%;
+    }
+
+    &__inner {
+        padding: 20px;
+
+        @include abtracts.breakpoint(lg) {
+            padding: 15px;
+        }
+
+        @include abtracts.breakpoint(lg) {
+            padding: 10px;
+        }
+
+        @include abtracts.breakpoint(md) {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__title {
+        border-radius: 4px;
+        color: $secondary-color;
+        font-size: 1.8rem;
+        font-weight: 500;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.6rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+
+        @include abtracts.breakpoint(md) {
+            width: 50%;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            min-width: 200px;
+        }
+    }
+
+    &__wrap-img {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        @include abtracts.breakpoint(md) {
+            justify-content: center;
+        }
+    }
+
+    &__spacer {
+        margin: 20px 0;
+        width: 100%;
+        height: 1px;
+        background-color: #e6e6e6;
+
+        @include abtracts.breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &__img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        display: block;
+
+        @include abtracts.breakpoint(md) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__action {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include abtracts.breakpoint(md) {
+            gap: 20px;
+        }
+
+
+        &Link {
+            border: 1px solid $fourary-color;
+            padding: 10px;
+            color: $fourary-color;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.5rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.6rem;
+            }
+
+            
+
+            img {
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+}
+
+.active {
+    background: $fourary-color;
+    color: #fff;
+}

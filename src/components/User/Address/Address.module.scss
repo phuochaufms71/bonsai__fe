@@ -1,0 +1,81 @@
+@use "../../scss/abtracts";
+@import "../../Common/Common.module.scss";
+
+.address {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-self: stretch;
+    box-shadow: 0 10px 50px #e6e6e6;
+    border-radius: 4px;
+    padding: 20px;
+    justify-content: center;
+
+    @include abtracts.breakpoint(sm) {
+        padding: 10px;
+    }
+
+    &__item {
+        border: 1px solid #e6e6e6;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 300px;
+
+        @include abtracts.breakpoint(md) {
+            width: 100%;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            padding: 10px;
+        }
+
+        &--title {
+            font-weight: 500;
+        }
+
+        &--name {
+            font-size: 1.8rem;
+            color: $secondary-color;
+            font-weight: 500;
+            line-height: 1.6;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &--phone {
+            font-size: 1.6rem;
+            color: #000;
+            line-height: 1.6;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &--email {
+            font-size: 1.6rem;
+            color: #000;
+            line-height: 1.6;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &--location {
+            font-size: 1.6rem;
+            color: #000;
+            line-height: 1.6;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

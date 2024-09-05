@@ -1,0 +1,403 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.about {
+
+    &__inner {
+        margin: 50px auto;
+
+        @include abtracts.breakpoint(sm) {
+            margin-top: 30px;
+        }
+    }
+
+    &__body {
+        display: flex;
+        gap: 30px;
+
+        @include abtracts.breakpoint(md) {
+            flex-direction: column-reverse;
+        }
+
+        &-left {
+            display: flex;
+            gap: 20px;
+
+            @include abtracts.breakpoint(md) {
+                justify-content: center;
+                width: 100%;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                gap: 10px;
+            }
+        }
+
+        &-wrap-img {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 200px;
+            height: 140px;
+
+            &:nth-child(2) {
+                height: 305px;
+
+                @include abtracts.breakpoint(lg) {
+                    height: 300px;
+                }
+
+                @include abtracts.breakpoint(sm) {
+                    height: 225px;
+                }
+            }
+
+            @include abtracts.breakpoint(lg) {
+                width: 180px;
+            }
+
+            @include abtracts.breakpoint(md) {
+                width: 250px;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                width: 150px;
+                gap: 10px;
+            }
+        }
+        
+        &-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            display: block;
+
+            @include abtracts.breakpoint(sm) {
+                height: 120px;
+            }
+        }
+
+        &-right {
+            @include abtracts.breakpoint(md) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        &-title {
+            font-size: 3rem;
+            font-family: "Merienda";
+            font-weight: 800;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 2.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 2rem;
+            }
+
+            span {
+                color: $fourary-color;
+            }
+        }
+
+        &-desc {
+            color: #959595;
+            line-height: 1.6;
+            font-size: 1.8rem;
+            margin: 20px 0;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.5rem;
+            }
+        }
+
+        &-order {
+            color: #fff;
+            display: block;
+            border: none;
+            outline: none;
+            width: 150px;
+            border-radius: 99px;
+            background-color: $fourary-color;
+            text-align: center;
+            padding: 10px;
+            font-weight: 500;
+            font-size: 1.8rem;
+            cursor: pointer;
+
+            @include abtracts.breakpoint(md) {
+                margin: 0 auto;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.6rem;
+                display: none;
+            }
+        }
+
+        &-order-mobie {
+            display: none;
+            border: none;
+            outline: none;
+            width: 200px;
+            margin: 0 auto;
+            border-radius: 99px;
+            background-color: $fourary-color;
+            text-align: center;
+            padding: 10px;
+            font-weight: 500;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #fff;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.6rem;
+                display: block;
+            }
+        }
+    }
+
+    &__history {
+        margin-top: 80px;
+
+        &--title {
+            font-size: 3rem;
+            font-family: "Merienda";
+            font-weight: 800;
+            text-align: center;
+
+            span {
+                color: $fourary-color;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 2.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 2rem;
+            }
+        }
+
+        &--content {
+            margin-top: 20px;
+            line-height: 1.7;
+            color: #959595;
+            text-align: center;
+            font-size: 1.8rem;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &__choose {
+        margin-top: 80px;
+
+        &-title {
+            font-size: 3rem;
+            font-family: "Merienda";
+            font-weight: 800;
+            text-align: center;
+
+
+            @include abtracts.breakpoint(md) {
+                font-size: 2.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 2rem;
+            }
+
+            span {
+                color: $fourary-color;
+            }
+        }
+
+        &-desc {
+            font-size: 1.8rem;
+            color: #333;
+            margin-top: 25px;
+            line-height: 1.6;
+            text-align: center;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &-list {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        &-item {
+            width: 300px;
+        }
+        
+        &-img {
+            display: block;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin: 0 auto;
+
+            @include abtracts.breakpoint(md) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        &-item-title {
+            color: $secondary-color;
+            margin: 20px;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 500;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.8rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &-item-desc {
+            font-size: 1.6rem;
+            color: #666;
+            line-height: 1.6;
+            text-align: center;
+            margin-top: 10px;
+            
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__style {
+        margin-top: 100px;
+
+        &-title {
+            font-size: 3rem;
+            font-family: "Merienda";
+            font-weight: 800;
+            text-align: center;
+
+            span {
+                color: $fourary-color;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 2.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 2rem;
+            }
+        }
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 50px;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+
+            &--img {
+                width: 200px;
+                object-fit: cover;
+            }
+
+            &--name {
+                margin-top: 10px;
+                font-weight: 500;
+                color: $fourary-color;
+            }
+        }
+    }
+
+    &__deliver {
+        margin-top: 80px;
+
+        &-title {
+            text-align: center;
+            font-size: 3rem;
+            font-family: "Merienda";
+            font-weight: 800;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 2.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            span {
+                color: $fourary-color;
+            }
+        }
+
+        &-desc {
+            text-align: center;
+            line-height: 1.6;
+            color: #333;
+            margin-top: 20px;
+            font-size: 1.8rem;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+
+        &-img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+
+            @include abtracts.breakpoint(lg) {
+                width: 250px;
+                height: 250px;
+            }
+
+            @include abtracts.breakpoint(md) {
+                width: 200px;
+                height: 200px;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                margin: 0 auto;
+            }
+        }
+    }
+
+}

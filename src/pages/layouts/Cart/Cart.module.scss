@@ -1,0 +1,348 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.cart-empty {
+    margin: 50px 0;
+
+    @include abtracts.breakpoint(md) {
+        margin-top: 30px;
+    }
+
+    &__title {
+        font-size: 4rem;
+        text-align: center;
+        color: $fourary-color;
+        font-weight: 800;
+        font-family: "Merienda";
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 3.6rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 3rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 2rem;
+        }
+    }
+
+    &__desc {
+        text-align: center;
+        font-size: 2rem;
+        margin: 30px 0;
+        color: #959595;
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 1.8rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.6rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+    }
+
+    &__link {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: $fourary-color;
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 1.8rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.6rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// cart have food
+
+.cart {
+    margin: 50px 0;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: #f5f5f5;
+        padding: 10px;
+
+        @include abtracts.breakpoint(sm) {
+            gap: 10px;
+        }
+
+        &-wrap-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            @include abtracts.breakpoint(lg) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-right: 50px;
+
+            @include abtracts.breakpoint(lg) {
+                margin-right: 40px;
+            }
+
+            @include abtracts.breakpoint(md) {
+                margin-right: 30px;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                margin-right: 0;
+            }
+        }
+
+        &-name {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: $fourary-color;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &-price {
+            color: #333;
+            font-weight: 500;
+            font-size: 1.5rem;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &-action {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        &-decrease {
+            font-size: 1.7rem;
+            padding: 10px;
+            border: 1px solid #959595;
+            background-color: transparent;
+            border-radius: 99px 0 0 99px;
+            cursor: pointer;
+
+            @include abtracts.breakpoint(md) {
+                padding: 5px;
+                font-size: 1.6rem;
+            }
+        }
+
+        &-quantity {
+            font-size: 1.7rem;
+            padding: 10px;
+            border-top: 1px solid #959595;
+            border-bottom: 1px solid #959595;
+            background-color: transparent;
+
+            @include abtracts.breakpoint(md) {
+                padding: 5px;
+                font-size: 1.6rem;
+            }
+        }
+
+        &-increase {
+            font-size: 1.7rem;
+            padding: 10px;
+            border: 1px solid #959595;
+            background-color: transparent;
+            border-radius: 0 99px 99px 0;
+            cursor: pointer;
+
+            @include abtracts.breakpoint(md) {
+                padding: 5px;
+                font-size: 1.6rem;
+            }
+        }
+
+        &-wrap-delete {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+
+            @include abtracts.breakpoint(md) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &-delete {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__delete {
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+
+        @include abtracts.breakpoint(sm) {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    &__name {
+        font-size: 1.5rem;
+    }
+
+    &__quantity {
+        padding: 5px;
+        border-top: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    &__btn {
+        padding: 5px 8px;
+        font-weight: 500;
+        border: 1px solid #e6e6e6;
+        outline: none;
+        border-radius: 99px 0 0 99px;
+        background-color: transparent;
+        color: $secondary-color;
+        
+        &:last-child {
+            border-radius: 0 99px 99px 0;
+        }
+    }
+
+    &__action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__shopping {
+        color: $secondary-color;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &--icon {
+            font-size: 1.7rem;
+        }
+
+        span {
+            font-size: 1.7rem;
+        }
+    }
+
+    &__clear {
+        margin: 20px 0;
+        padding: 10px;
+        color: $fourary-color;
+        border: 1px solid $fourary-color;
+        background: transparent;
+        cursor: pointer;
+
+        @include abtracts.breakpoint(sm) {
+            padding: 8px;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.cart__total {
+    margin-top: 20px;
+    width: 400px;
+    border: 1px solid #e6e6e6;
+
+    @include abtracts.breakpoint(sm) {
+        width: 280px;
+        margin: 20px auto;
+    }
+    
+    &-title {
+        background-color: #f5f5f5;
+        padding: 10px;
+        text-align: center;
+        font-weight: 500;
+        color: $secondary-color;
+        font-size: 1.8rem;
+    }
+
+    &-item {
+        padding: 15px;
+        border-bottom: 1px solid #e6e6e6;
+        color: #333;
+        font-weight: 400;
+        font-weight: 500;
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.5rem;
+        }
+
+        span {
+            display: inline-block;
+            color: #333;
+            min-width: 150px;
+            font-size: 1.5rem;
+        }
+    }
+
+    &-checkout {
+        display: block;
+        padding: 10px;
+        border: none;
+        background-color: $fourary-color;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}

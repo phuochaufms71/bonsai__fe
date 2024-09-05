@@ -1,0 +1,113 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.page-not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #151e39;
+    height: 100vh;
+    
+    &__inner {
+        text-align: center;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        color: #fff;
+        font-size: 12rem;
+        font-weight: 600;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 8rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 6rem;
+            gap: 3px;
+        }
+    }
+
+    &__image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+
+        @include abtracts.breakpoint(md) {
+            width: 70px;
+            height: 70px;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    &__sub-title {
+        color: $primary-color;
+        font-size: 6rem;
+        font-weight: 600;
+        margin-top: 10px;
+        letter-spacing: 1.1px;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 4rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 3rem;
+        }
+    }
+
+    &__content {
+        color: $secondary-color;
+        font-size: 4rem;
+        margin-top: 20px;
+        font-weight: 500;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 3rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2.6rem;
+        }
+    }
+
+    &__link {
+        display: block;
+        margin: 30px auto 0;
+        min-width: 200px;
+        padding: 10px;
+        border-radius: 99px;
+        border: 1px solid $primary-color;
+        outline: none;
+        color: $primary-color;
+        background-color: transparent;
+        font-size: 1.8rem;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.6rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__prev {
+        margin: 30px auto 0;
+        color: #fff;
+        text-decoration: underline;
+        font-size: 1.6rem;
+        cursor: pointer;
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.5rem;
+        }
+    }
+}

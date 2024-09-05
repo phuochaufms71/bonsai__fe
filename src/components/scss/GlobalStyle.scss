@@ -1,0 +1,38 @@
+@use "../scss/abtracts";
+@import "../Common/Common.module.scss";
+
+.slick-track {
+    display: flex;
+    gap: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.page-item {
+    border: 1px solid $secondary-color;
+    padding: 2px;
+    text-align: center;
+    color: $secondary-color;
+    min-width: 40px;
+}
+
+.page-link {
+    font-weight: 600;
+}
+
+.disabled {
+    color: #8d8d8d;
+    pointer-events: none;
+    border-color: #8d8d8d;
+}
+
+.active {
+    background-color: $secondary-color;
+    color: #fff;
+}

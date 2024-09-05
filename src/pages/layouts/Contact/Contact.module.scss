@@ -1,0 +1,222 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.contact {
+    margin-top: 50px;
+    
+    &__title {
+        margin: 30px 0 50px;
+        text-align: center;
+        font-size: 4rem;
+        color: $fourary-color;
+        font-family: "Merienda";
+        font-weight: 900;
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 3.6rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__sub-title {
+        text-align: center;
+        font-size: 3rem;
+        font-family: "Merienda";
+        font-weight: 800;
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 2.4rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__desc {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+        line-height: 1.6;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.4rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.3rem;
+        }
+        
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 80px;
+        gap: 100px;
+        flex-wrap: wrap;
+
+        @include abtracts.breakpoint(md) {
+            gap: 40px;
+            margin-top: 50px;
+        }
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        i {
+            font-size: 2.6rem;
+            padding: 15px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            color: $fourary-color;
+
+            @include abtracts.breakpoint(md) {
+                padding: 10px;
+                font-size: 2rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.8rem;
+            }
+        }
+
+        &-field {
+            color: #333;
+            margin-top: 15px;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &-desc {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &-content {
+            margin-top: 10px;
+            color: $fourary-color;
+            font-size: 1.7rem;
+            font-weight: 600;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__spacer {
+        margin: 40px auto;
+        width: 80%;
+        height: 2px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 99px;
+    }
+
+    &__form {
+        max-width: 500px;
+        margin: 50px auto;
+
+        @include abtracts.breakpoint(md) {
+            max-width: 400px;
+        }
+
+        &-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        &-label {
+            font-size: 1.6rem;
+            color: $secondary-color;
+            font-weight: 600;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.5rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &-input {
+            outline: none;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #b4b4b4;
+            padding: 8px;
+            color: $secondary-color;
+
+            &:focus {
+                border-color: $secondary-color;
+            }
+        }
+
+        &-submit {
+            display: block;
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 12px;
+            color: #fff;
+            background-color: $secondary-color;
+            border-radius: 99px;
+            margin: 30px auto 0;
+            font-size: 1.7rem;
+            cursor: pointer;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__map {
+        text-align: center;
+
+        &-title {
+            font-size: 2rem;
+            color: $secondary-color;
+        }
+
+        &-iframe {
+            width: 100%;
+            margin: 20px auto;
+        }
+    }
+}

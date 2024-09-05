@@ -1,0 +1,80 @@
+@use "../../../components/scss/abtracts";
+@import "../../../components/Common/Common.module.scss";
+
+.menu { 
+    margin-top: 50px;
+
+    &__title {
+        margin-top: 30px;
+        font-family: "Merienda";
+        color: $fourary-color;
+        font-size: 4rem;
+        text-align: center;
+        font-weight: 800;
+
+        @include abtracts.breakpoint(xl) {
+            font-size: 3.6rem;
+        }
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 3rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2.6rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 2rem;
+        }
+    }
+
+    &__desc {
+        text-align: center;
+        max-width: 700px;
+        margin: 20px auto;
+        font-size: 1.8rem;
+        color: #959595;
+        line-height: 1.6;
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__wrap-btn {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto;
+
+        @include abtracts.breakpoint(md) {
+            gap: 15px;
+        }
+    }
+
+    &__btn {
+        min-width: 120px;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 99px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            background: orange;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.active {
+    color: #fff;
+    background-color: $secondary-color;
+}

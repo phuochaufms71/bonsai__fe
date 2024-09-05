@@ -1,0 +1,175 @@
+@use "../scss/abtracts";
+@import "../Common/Common.module.scss";
+
+.footer {
+    background-image: url("../images/bg-feedback.jpg");
+    background-position: center center;
+    background-size: cover;
+    padding: 10px 0;
+
+    &__top {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+
+        &-logo {
+            display: block;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid $primary-color;
+        }
+
+        &-social {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            &-item {
+                width: 30px;
+                height: 30px;
+                overflow: hidden;
+                cursor: pointer;
+
+                &:nth-child(3) {
+                    border-radius: 50%;
+                }
+            }
+
+            &-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+
+
+    &__spacer {
+        width: 1.5px;
+        height: 50px;
+        margin: 0 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+
+        @include abtracts.breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &__subscription {
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+            font-family: "Dancing Script";
+            font-weight: 700;
+            font-size: 2.6rem;
+            color: $secondary-color;
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__hr {
+        display: block;
+        width: 100%;
+        height: 1.5px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 99px;
+        margin: 30px 0;
+
+        @include abtracts.breakpoint(lg) {
+            margin: 20px 0;
+        }
+    }
+
+    &__bottom {
+        display: grid;
+        grid-template-columns: 1fr 0.5fr 0.5fr 0.8fr;
+        gap: 40px;
+
+        @include abtracts.breakpoint(lg) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            grid-template-columns: 1fr;
+            place-content: center;
+            place-items: center;
+            gap: 50px
+        }
+    }
+
+    &__column {
+
+        &-wrap {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        &-desc {
+            color: #ededed;
+            line-height: 1.6;
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 1.5rem;
+            }
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &-content {
+            color: $primary-color;
+            font-size: 1.6rem;
+            font-weight: 500;
+
+            @include abtracts.breakpoint(sm) {
+                text-align: center;
+            }
+        }
+        
+
+        &-title {
+            font-family: "Merienda";
+            color: #fff;
+            margin-bottom: 10px;
+
+            @include abtracts.breakpoint(lg) {
+                font-size: 1.6rem;
+            }
+
+            @include abtracts.breakpoint(sm) {
+                text-align: center;
+            }
+        }
+
+        &-link {
+            display: block;
+            color: $primary-color;
+            padding: 10px;
+            text-decoration: underline;
+
+            @include abtracts.breakpoint(sm) {
+                text-align: center;
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: $primary-color;
+        margin: 20px 0;
+
+        i {
+            color: $primary-color;
+        }
+    }
+}

@@ -1,0 +1,139 @@
+@use "../../scss/abtracts";
+@import "../../Common/Common.module.scss";
+
+
+.favourite__list {
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.favourite__item {
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.3s;
+    width: 260px;
+
+    &:hover {
+        box-shadow: 0px 0px 50px 2px #e6e6e6;
+    }
+
+    &-wrap-img {
+        width: 100%;
+        height: 200px;
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+        border: 1.5px solid $fourary-color;
+
+        @include abtracts.breakpoint(sm) {
+            height: 150px;
+        }
+        
+    }
+    
+    &-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: 0.3s;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    &-name {
+        margin: 10px 0;
+        font-family: "Merienda";
+        font-weight: 800;
+        font-size: 2rem;
+        text-align: center;
+        color: $secondary-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.7rem;
+        }
+    }
+
+    &-discount {
+        color: #959595;
+        font-size: 1.4rem;
+        text-align: center;
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.3rem;
+        }
+    }
+
+    &-price {
+        text-align: center;
+        color: $secondary-color;
+        font-family: "Merienda";
+        font-weight: 800;
+        margin: 15px 0;
+        font-size: 1.8rem;
+    }
+
+    &-rate {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 15px 0;
+    }
+
+    &-wrap-star {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    &-star {
+        width: 15px;
+        height: 15px;
+        object-fit: cover;
+        display: block;
+    }
+
+    &-rate-content {
+        font-weight: 500;
+    }
+
+    &-like {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        font-size: 1.8rem;
+        color: #333;
+        font-weight: 500;
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+
+.favourite__heart {
+    color: #fff;
+    background-color: $secondary-color;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    font-size: 2rem;
+    border-radius: 50%;
+}
+
