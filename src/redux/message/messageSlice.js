@@ -3,9 +3,9 @@ import createApi from "../../api"
 import { notification } from "antd"
 import { NOTIFICATION_TYPES } from "../../constants";
 
-export const getMessages = createAsyncThunk('message/getMessages', async (accessToken) => {
+export const getMessages = createAsyncThunk('message/getMessages', async () => {
     try {
-        const { data } = await createApi(accessToken).get('/message/lists');
+        const { data } = await createApi().get('/message/lists');
         return data.data
     } catch (error) {
         notification[NOTIFICATION_TYPES.error]({
@@ -14,9 +14,9 @@ export const getMessages = createAsyncThunk('message/getMessages', async (access
     }
 })
 
-export const createMessage = createAsyncThunk('message/createMessage', async ({accessToken, newMessage}) => {
+export const createMessage = createAsyncThunk('message/createMessage', async ({newMessage}) => {
     try {
-        await createApi(accessToken).post('/message/create', {...newMessage})
+        await createApi().post('/message/create', {...newMessage})
         notification[NOTIFICATION_TYPES.success]({
             message: "Send message successfully"
         })
@@ -41,6 +41,5 @@ const messageSlice = createSlice({
     }
 })
 
-// export const { removeSelectedMovie } = foodSlice.actions;
 
 export default messageSlice.reducer;

@@ -12,7 +12,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { addFavouriteBonsai } from "../../../../redux/bonsai/favouriteBonsaiSlice.js";
 import { ToastContainer } from "react-toastify";
 import { getBonsais } from "../../../../redux/bonsai/bonsaiSlice.js";
-import { ACCESS_TOKEN } from "../../../../constants/index.js";
+import formatNumberWithSeparator from "../../../../constants/index.js";
+
 
 const ShoppingList = ({category}) => {
     const cx = classNames.bind(styles);
@@ -29,13 +30,12 @@ const ShoppingList = ({category}) => {
     }
 
     const fetchBonsais = async() => {
-        const accessToken = localStorage.getItem(ACCESS_TOKEN);
-        await dispatch(getBonsais(accessToken))
+        await dispatch(getBonsais())
     }
 
     useEffect(() => {
         fetchBonsais()
-    }, [localStorage.getItem(ACCESS_TOKEN)])
+    }, [])
 
     return (
         <>
@@ -52,8 +52,9 @@ const ShoppingList = ({category}) => {
                                             <FontAwesomeIcon onClick={() => {setFavourite(true); setIdBonsai(bonsai?._id); handleAddFavouriteBonsai(bonsai)}} icon={faHeart} className={`${idBonsai === bonsai._id && favourite ? styles.active : "" } ${styles.shopping__heart}`} />
                                         </div>
                                         <p className={cx("shopping__item-name")}>{bonsai?.name}</p>
-                                        <p className={cx("shopping__item-discount")}>Giảm 20% cho lần mua thứ 5 tại Shop Bonsai Vy Nguyễn </p>
-                                        <p className={cx("shopping__item-price")}>{bonsai?.price} VNĐ</p>
+                                        <p className={cx("shopping__item-code")}>Mã số: <span>{bonsai?.code}</span></p>
+                                        <p className={cx("shopping__item-discount")}>Giảm 5% cho lần mua thứ 5 tại Shop Bonsai Vy Nguyễn </p>
+                                        <p className={cx("shopping__item-price")}>{formatNumberWithSeparator((bonsai?.price), " ")} VNĐ</p>
                                         <div className={cx("shopping__item-wrap-btn")}>
                                             <Link to={`${bonsai._id}`} className={cx("shopping__item-btn--readmore")}>Đọc thêm</Link>
                                             <div>

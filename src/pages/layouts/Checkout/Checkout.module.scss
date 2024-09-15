@@ -55,7 +55,7 @@
             font-size: 1.5rem;
         }
 
-        &-user {
+        &_user {
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -65,11 +65,6 @@
             border-radius: 10px;
             padding: 10px;
             position: relative;
-            transition: 0.3s;
-
-            &:hover {
-                border: 1px solid $fourary-color;
-            }
 
             &--name {
                 font-size: 1.7rem;
@@ -99,6 +94,10 @@
                     font-size: 1.4rem;
                 }
             }
+        }
+
+        &_checked {
+            border: 1px solid $fourary-color;
         }
 
         &-wrap-btn {
@@ -183,7 +182,7 @@
         }
     }
 
-    &__food {
+    &__bonsai {
 
         &-item {
             display: flex;
@@ -261,7 +260,7 @@
         }
 
         &-total {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 500;
 
             @include abtracts.breakpoint(lg) {
@@ -452,14 +451,22 @@
 
             &--title {
                 color: $secondary-color;
-                font-size: 1.8rem;
+                font-size: 1.7rem;
                 font-weight: 500;
+
+                @include abtracts.breakpoint(sm) {
+                    font-size: 1.6rem;
+                }
             }
 
             &--number {
                 color: $secondary-color;
-                font-size: 1.8rem;
+                font-size: 1.7rem;
                 font-weight: 500;
+
+                @include abtracts.breakpoint(sm) {
+                    font-size: 1.6rem;
+                }
             }
         }
     }

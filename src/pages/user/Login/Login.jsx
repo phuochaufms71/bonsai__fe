@@ -38,7 +38,7 @@ const Login = () => {
     setLoading(false)
   }
 
-  return loading ? (<div className={cx("loading-icon")}><Loading /></div>) : (
+  return loading ? <Loading /> : (
     <div className={cx("box__login")}>
       <div className={cx("login")}>
         <form onSubmit={handleLogin} className={cx("login__form")}>

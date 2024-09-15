@@ -18,10 +18,10 @@ const PageNotFound = () => {
             />
             4
           </h2>
-          <p className={cx("page-not-found__sub-title")}>ERROR</p>
-          <p className={cx("page-not-found__content")}>Page Not Found</p>
-          <Link to="/" className={cx("page-not-found__link")}>Go Back To Home Page</Link>
-          <p className={cx("page-not-found__prev")} onClick={() => window.history.back()}>Go Back Page Prevous</p>
+          <p className={cx("page-not-found__sub-title")}>LỖI</p>
+          <p className={cx("page-not-found__content")}>Trang không tồn tại</p>
+          <Link to="/" className={cx("page-not-found__link")}>Trở về trang chủ</Link>
+          <p className={cx("page-not-found__prev")} onClick={() => window.history.back()}>Về trang trước đó</p>
         </div>
       </div>
     </div>

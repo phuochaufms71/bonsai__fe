@@ -112,10 +112,6 @@
             @include abtracts.breakpoint(md) {
                 font-size: 1.6rem;
             }
-
-            @include abtracts.breakpoint(sm) {
-                font-size: 1.5rem;
-            }
         }
 
         &-order {
@@ -374,7 +370,6 @@
 
             @include abtracts.breakpoint(sm) {
                 text-align: center;
-                font-size: 1.5rem;
             }
         }
 

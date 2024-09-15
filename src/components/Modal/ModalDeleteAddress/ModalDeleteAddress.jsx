@@ -10,7 +10,7 @@ const ModalDeleteAddress = ({ selectedAddress, idSelected, setShowModalDelete, h
         <h3 className={cx("modal-delete__title")}>
           Quý khách muốn xóa địa chỉ dưới đây
         </h3>
-        <p className={cx("modal-delete__sub-title")}>
+        <div className={cx("modal-delete__sub-title")}>
           <p>
             <span>Số {selectedAddress?.more}</span>, 
             <span> ấp {selectedAddress?.hamlet}</span>, 
@@ -18,9 +18,8 @@ const ModalDeleteAddress = ({ selectedAddress, idSelected, setShowModalDelete, h
             <span> huyện {selectedAddress?.district}</span>, 
             <span> tỉnh {selectedAddress?.province}</span>, 
             <span> {selectedAddress?.country}</span>
-
           </p>
-        </p>
+        </div>
         <p className={cx("modal-delete__question")}>Quý khách đã chắc chắn?</p>
         <div className={cx("modal-delete__wrap-btn")}>
           <button

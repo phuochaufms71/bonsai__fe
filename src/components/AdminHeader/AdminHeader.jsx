@@ -28,11 +28,11 @@ const AdminHeader = () => {
     
           {/* Navbar */}
           <nav className={cx("admin-header__navbar")}>
-            <div onClick={() => setActive("dashboard")} className={cx("admin-header__navbar-item")}>
-              <Link to="/" className={cx("admin-header__navbar-link")}>
-                Điều khiển
+            <div onClick={() => setActive("bill")} className={cx("admin-header__navbar-item")}>
+              <Link to="/bill" className={cx("admin-header__navbar-link")}>
+                Hóa đơn
               </Link>
-              {active === "dashboard" ? <div className={cx("active")}></div> : <></>}
+              {active === "bill" ? <div className={cx("active")}></div> : <></>}
             </div>
             <div onClick={() => setActive("analytics")} className={cx("admin-header__navbar-item")}>
               <Link to="/analytics" className={cx("admin-header__navbar-link")}>

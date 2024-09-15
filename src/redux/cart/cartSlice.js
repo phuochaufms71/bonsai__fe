@@ -15,18 +15,19 @@ const cartSlice = createSlice({
             const itemIndex = state.cartBonsais.findIndex(item => item._id === action.payload._id);
             if (itemIndex >= 0) {
                 state.cartBonsais[itemIndex].cartQuantity += 1;
+                toast.info("Bonsai đã có trong giỏ hàng")
             } else {
                 const tempBonsai = { ...action.payload, cartQuantity: 1 };
                 state.cartBonsais.push(tempBonsai);
+                toast.success("Thêm bonsai vào giỏ hàng")
             }
-            toast.success("Thêm bonsai vào giỏ hàng")
             localStorage.setItem("cartBonsais", JSON.stringify(state.cartBonsais))
         },
         removeBonsaiFromCart: (state, action) => {
             const nextCartBonsais = state.cartBonsais.filter(cartItem => cartItem._id !== action.payload._id)
 
             state.cartBonsais = nextCartBonsais;
-            toast.error("Bonsai deleted")
+            toast.error("Bonsai đã được xóa")
             localStorage.setItem("cartBonsais", JSON.stringify(state.cartBonsais))
         },
         increaseCart: (state, action) => {

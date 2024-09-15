@@ -38,7 +38,7 @@ const Footer = () => {
               </div>
               <div className={cx("footer__column-wrap")}>
                 <h3 className={cx("footer__column-title")}>Số điện thoại</h3>
-                <p className={cx("footer__column-content")}>+84-946-168-499</p>
+                <p className={cx("footer__column-content")}>0946 168 499</p>
               </div>
               <div className={cx("footer__column-wrap")}>
                 <h3 className={cx("footer__column-title")}>Thời gian mở cửa</h3>
@@ -73,11 +73,11 @@ const Footer = () => {
               <h3 className={cx("footer__column-title")}>Thông tin liên lạc</h3>
               <div className={cx("footer__row")}>
                 <i className="fa-solid fa-location-dot"></i>
-                <span>Long Hue, Cho Lach, Ben Tre</span>
+                <span>Long Huê, Chợ Lách, Bến Tre</span>
               </div>
               <div className={cx("footer__row")}>
                 <i className="fa-solid fa-phone"></i>
-                <span>+84-946-168-499</span>
+                <span>0946 168 499</span>
               </div>
               <div className={cx("footer__row")}>
                 <i className="fa-solid fa-envelope"></i>

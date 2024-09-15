@@ -56,7 +56,7 @@
         font-weight: 800;
         font-size: 2rem;
         text-align: center;
-        color: $secondary-color;
+        color: $fourary-color;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -70,6 +70,7 @@
         color: #959595;
         font-size: 1.4rem;
         text-align: center;
+        line-height: 1.6;
 
         @include abtracts.breakpoint(sm) {
             font-size: 1.3rem;
@@ -78,7 +79,7 @@
 
     &-price {
         text-align: center;
-        color: $secondary-color;
+        color: $fourary-color;
         font-family: "Merienda";
         font-weight: 800;
         margin: 15px 0;
@@ -127,8 +128,8 @@
 
 
 .favourite__heart {
-    color: #fff;
-    background-color: $secondary-color;
+    color: $fourary-color;
+    background-color: #fff;
     position: absolute;
     top: 5px;
     right: 5px;

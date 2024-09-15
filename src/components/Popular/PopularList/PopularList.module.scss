@@ -60,14 +60,28 @@
         }
     }
 
+    &-code {
+        margin: 10px 0;
+        text-align: center;
+        color: #fff;
+        background-color: #000;
+        border-radius: 99px;
+        padding: 5px;
+
+        span {
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+    }
+
     &-discount {
         color: #959595;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         text-align: center;
         line-height: 1.6;
 
         @include abtracts.breakpoint(md) {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
     }
 
@@ -130,5 +144,5 @@
 
 .active {
     color: #fff;
-    background-color: $secondary-color;
+    background-color: $fourary-color;
 }

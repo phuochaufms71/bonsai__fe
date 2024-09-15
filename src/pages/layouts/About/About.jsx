@@ -36,7 +36,7 @@ const About = () => {
                 <div className={cx("about__choose")}>
                     <h3 className={cx("about__choose-title")}>Tại sao lại chọn Bonsai <span>Vy Nguyễn</span></h3>
                     <p className={cx("about__choose-desc")}>
-                        Chúng tôi cam kết mang đến cho bạn những sản phẩm bonsai chất lượng cao nhất và những dịch vụ tốt nhất. Chúng tôi luôn sẵn sàng chia sẻ kiến thức và giúp bạn trở thành một nghệ nhân bonsai theo cách riêng mà bạn thích.
+                        Chúng tôi cam kết mang đến cho quý khách những sản phẩm bonsai chất lượng cao nhất và những dịch vụ tốt nhất. Chúng tôi luôn sẵn sàng chia sẻ kiến thức và giúp quý khách trở thành một nghệ nhân bonsai theo cách riêng mà quý khách thích.
                     </p>
                     <div className={cx("about__choose-list")}>
                         <div className={cx("about__choose-item")}>
@@ -54,7 +54,7 @@ const About = () => {
                                 Tư vấn tận tâm
                             </h4>
                             <p className={cx("about__choose-item-desc")}>
-                                Khách hàng là ưu tiên hàng đầu của chúng tôi. Chúng tôi cam kết mang lại dịch vụ tận tâm, sẵn sàng lắng nghe và đáp ứng nhu cầu của bạn. Đội ngũ hỗ trợ khách hàng của chúng tôi luôn sẵn sàng để giúp bạn.
+                                Khách hàng là ưu tiên hàng đầu của chúng tôi. Chúng tôi cam kết mang lại dịch vụ tận tâm, sẵn sàng lắng nghe và đáp ứng nhu cầu của quý khách. Đội ngũ hỗ trợ khách hàng của chúng tôi luôn sẵn sàng để giúp quý khách.
                             </p>
                         </div>
                         <div className={cx("about__choose-item")}>
@@ -114,7 +114,7 @@ const About = () => {
                         Liên hệ với<span> Chúng tôi</span>
                     </h3>
                     <p className={cx("about__deliver-desc")}>
-                        Nếu bạn muốn tìm hiểu thêm về nghệ thuật bonsai hoặc cần hỗ trợ, hãy liên hệ với chúng tôi. Chúng tôi rất vui được đồng hành cùng bạn trên hành trình khám phá thế giới bonsai.
+                        Nếu quý khách muốn tìm hiểu thêm về nghệ thuật bonsai hoặc cần hỗ trợ, hãy liên hệ với chúng tôi. Chúng tôi rất vui được đồng hành cùng quý khách trên hành trình khám phá thế giới bonsai.
                     </p>
                 </div>
             </div>

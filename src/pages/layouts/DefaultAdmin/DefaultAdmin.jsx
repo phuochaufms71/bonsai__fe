@@ -16,7 +16,6 @@ const DefaultAdmin = ({children}) => {
           <div className={cx("content")}>
             {children}
           </div>
-         
         </div>
       </div>
       <AdminFooter/>

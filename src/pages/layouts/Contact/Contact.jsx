@@ -4,8 +4,8 @@ import classNames from "classnames/bind";
 import styles from "./Contact.module.scss";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { createMessage, getMessages } from "../../../redux/message/messageSlice";
-import { ACCESS_TOKEN } from "../../../constants";
+import { createMessage } from "../../../redux/message/messageSlice";
+
 import Aos from "aos";
 
 const Contact = () => {
@@ -17,18 +17,12 @@ const Contact = () => {
       email: "",
       message: ""
     })
-    const accessToken = localStorage.getItem(ACCESS_TOKEN);
-
-    const fetchMessage = () => {
-      dispatch(getMessages(accessToken))
-    }
     
     const handleSubmitMessage = async (e) => {
       e.preventDefault();
       setSubmit("Đang gửi...");
 
       dispatch(createMessage({
-        accessToken,
         newMessage: formData
       }))
       setSubmit("Gửi")
@@ -41,15 +35,14 @@ const Contact = () => {
 
     useEffect(() => {
       Aos.init()
-      fetchMessage()
-    }, [localStorage.getItem(ACCESS_TOKEN)])
+    }, [])
   return (
     <section className={cx("contact")}>
       <div className={cx("container")}>
         <div className={cx("contact__inner")}>
           <h2 className={cx("contact__title")}>Liên Hệ</h2>
-          <p className={cx("contact__sub-title")} data-aos="fade-up" data-aos-duration="1000">Chúng tôi sẵn sàng hỗ trợ bạn</p>
-          <p className={cx("contact__desc")} data-aos="fade-up" data-aos-duration="1000">Nếu bạn có bất kỳ câu hỏi nào về sản phẩm, dịch vụ, hoặc cần tư vấn, đừng ngần ngại liên hệ với chúng tôi qua các kênh dưới đây:</p>
+          <p className={cx("contact__sub-title")} data-aos="fade-up" data-aos-duration="1000">Chúng tôi sẵn sàng hỗ trợ quý khách</p>
+          <p className={cx("contact__desc")} data-aos="fade-up" data-aos-duration="1000">Nếu quý khách có bất kỳ câu hỏi nào về sản phẩm, dịch vụ, hoặc cần tư vấn, đừng ngần ngại liên hệ với chúng tôi qua các kênh dưới đây:</p>
           <div className={cx("contact__container")}>
             <div className={cx("contact__group")} data-aos="fade-up" data-aos-duration="1000">
               <i className="fa-solid fa-envelope"></i>
@@ -60,20 +53,20 @@ const Contact = () => {
             <div className={cx("contact__group")} data-aos="fade-up" data-aos-duration="1000">
               <i className="fa-solid fa-location-dot"></i>
               <h3 className={cx("contact__group-field")}>Địa chỉ</h3>
-              <p className={cx("contact__group-desc")}>Luôn chào đón quý khách hàng ghé shop bonsai</p>
+              <p className={cx("contact__group-desc")}>Luôn chào đón quý khách hàng ghé shop bonsai Vy Nguyễn</p>
               <p className={cx("contact__group-content")}>Long Huê, Chợ Lách, Bến Tre</p>
             </div>
             <div className={cx("contact__group")} data-aos="fade-up" data-aos-duration="1000">
               <i className="fa-solid fa-phone"></i>
               <h3 className={cx("contact__group-field")}>Số điện thoại</h3>
-              <p className={cx("contact__group-desc")}>Chúng tôi sẽ giải đáp thắc mắc cho bạn thông qua cuộc gọi</p>
-              <a href="tel: +84-946-168-499" className={cx("contact__group-content")}>+84-946-168-499</a>
+              <p className={cx("contact__group-desc")}>Chúng tôi sẽ giải đáp thắc mắc cho quý khách thông qua cuộc gọi</p>
+              <a href="tel: +84-946-168-499" className={cx("contact__group-content")}>0946 168 499</a>
             </div>
           </div>
           <div className={cx("contact__spacer")} data-aos="fade-up" data-aos-duration="1000"></div>
   
           <p className={cx("contact__sub-title")} data-aos="fade-up" data-aos-duration="1000">Gửi vấn đề cần giải quyết</p>
-          <p className={cx("contact__desc")} data-aos="fade-up" data-aos-duration="1000">Nếu bạn có vấn đề gì cần giúp đỡ thì có thể điền form này, chúng tồi sẽ liên hệ với bạn qua email.</p>
+          <p className={cx("contact__desc")} data-aos="fade-up" data-aos-duration="1000">Nếu quý khách có vấn đề gì cần giúp đỡ thì có thể điền form này, chúng tồi sẽ liên hệ với quý khách qua email.</p>
           <form className={cx("contact__form")} data-aos="fade-up" data-aos-duration="1000">
             <div className={cx("contact__form-group")}>
               <label className={cx("contact__form-label")}>Họ tên</label>
@@ -90,8 +83,8 @@ const Contact = () => {
             <button onClick={handleSubmitMessage} className={cx("contact__form-submit")}>{submit}</button>
           </form>
           <div className={cx("contact__map")} data-aos="fade-up" data-aos-duration="1000">
-            <h3 className={cx("contact__map-title")}>Address Us</h3>
-            <iframe className={cx("contact__map-iframe")} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62821.74992381082!2d106.1419126283518!3d10.232572410432699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310aa040f4b227b7%3A0x109211722711d4cb!2zTG9uZyBUaOG7m2ksIENo4bujIEzDoWNoLCBC4bq_biBUcmUsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1724167497258!5m2!1svi!2s" width="600" height="450" style={{border:0}} loading="lazy"></iframe>
+            <h3 className={cx("contact__map-title")}>Địa chỉ của chúng tôi</h3>
+            <iframe className={cx("contact__map-iframe")} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62821.74992381074!2d106.1419126283518!3d10.232572410432699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310aa040f4b227b7%3A0x109211722711d4cb!2zTG9uZyBUaOG7m2ksIENo4bujIEzDoWNoLCBC4bq_biBUcmUsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1725708691923!5m2!1svi!2s" width="600" height="450" style={{border: 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>

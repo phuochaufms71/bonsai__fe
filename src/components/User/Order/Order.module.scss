@@ -50,7 +50,7 @@
             gap: 10px;
 
             &--name {
-                color: $secondary-color;
+                color: $fourary-color;
                 font-size: 1.8rem;
                 font-weight: 500;
             }
@@ -94,7 +94,7 @@
 
             @include abtracts.breakpoint(sm) {
                 font-size: 1.5rem;
-                width: 150px;
+                // width: 150px;
                 margin-left: auto;
             }
         }

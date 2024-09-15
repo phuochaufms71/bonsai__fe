@@ -48,6 +48,14 @@ const Shopping = () => {
           >
             Linh sam
           </button>
+          <button
+            onClick={() => setCategory("dâu tằm")}
+            className={`${category === "dâu tằm" ? styles.active : ""} ${
+              styles.menu__btn
+            }`}
+          >
+            Dâu tằm
+          </button>
         </div>
         <ShoppingList category={category}/>
       </div>

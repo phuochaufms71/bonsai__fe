@@ -56,8 +56,7 @@ export const deleteAddress = createAsyncThunk('addresses/deleteAddress', async (
 })
 
 const initialState = {
-    addresses: localStorage.getItem("addresses") ? JSON.parse(localStorage.getItem("addresses")) : [],
-    address: {}
+    addresses: localStorage.getItem("addresses") ? JSON.parse(localStorage.getItem("addresses")) : []
 }
 
 const addressSlice = createSlice({

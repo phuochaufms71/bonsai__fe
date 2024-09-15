@@ -28,24 +28,6 @@ const SidebarDashboard = () => {
                     </div>
                 </div>
                 <div className={cx("sidebar__spacer")}></div>
-                <div className={cx("sidebar__content")}>
-                    <div className={cx("sidebar__wrap-img")}>
-                        <img className={cx("sidebar__img")} src={images.blog_icon} alt="icon blog" />
-                        <h3 className={cx("sidebar__title")}>Blog</h3>
-                    </div>
-                    <div className={cx("sidebar__action")}>
-                        <div className={cx("sidebar__action")}>
-                            <Link onClick={() => setActive("blog-lists")} to="/admin-blog/lists" className={`${active === "blog-lists" ? styles.active : ""} ${styles.sidebar__actionLink}`}>
-                                <img src={images.checklist_icon} alt="check list" />
-                                Danh sách blog
-                            </Link>
-                            <Link onClick={() => setActive("blog-create")} to="/admin-blog/create" className={`${active === "blog-create" ? styles.active : ""} ${styles.sidebar__actionLink}`}>
-                                <img src={images.add_icon} alt="icon add" />
-                                Tạo blog
-                            </Link>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     )

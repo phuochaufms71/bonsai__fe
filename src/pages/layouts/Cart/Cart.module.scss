@@ -15,14 +15,17 @@
         font-weight: 800;
         font-family: "Merienda";
 
-        @include abtracts.breakpoint(lg) {
+        @include abtracts.breakpoint(xl) {
             font-size: 3.6rem;
         }
 
-        @include abtracts.breakpoint(md) {
+        @include abtracts.breakpoint(lg) {
             font-size: 3rem;
         }
 
+        @include abtracts.breakpoint(md) {
+            font-size: 2.6rem;
+        }
         @include abtracts.breakpoint(sm) {
             font-size: 2rem;
         }

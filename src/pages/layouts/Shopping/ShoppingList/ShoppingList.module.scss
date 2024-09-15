@@ -61,14 +61,28 @@
         }
     }
 
+    &-code {
+        margin: 10px 0;
+        text-align: center;
+        color: #fff;
+        background-color: #000;
+        border-radius: 99px;
+        padding: 5px;
+
+        span {
+            font-weight: 600;
+            font-size: 1.8rem;
+        }
+    }
+
     &-discount {
         color: #959595;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         text-align: center;
         line-height: 1.6;
 
         @include abtracts.breakpoint(sm) {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
     }
 
@@ -117,30 +131,6 @@
         transition: 0.3s;
         border: 1px solid $fourary-color;
     }
-
-    &-rate {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        margin: 15px 0;
-    }
-
-    &-wrap-star {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-    
-    &-star {
-        width: 15px;
-        height: 15px;
-        object-fit: cover;
-        display: block;
-    }
-
-    &-rate-content {
-        font-weight: 500;
-    }
 }
 
 .shopping__heart {
@@ -155,6 +145,6 @@
 }
 
 .active {
-    color: $secondary-color;
+    color: $fourary-color;
     background-color: #fff;
 }

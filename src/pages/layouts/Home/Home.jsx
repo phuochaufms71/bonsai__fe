@@ -21,8 +21,8 @@ const Home = () => {
       <div className={cx("container")}>
         <div className={cx("home__inner")}>
           <div className={cx("home__content")}>
-            <h2 className={cx("home__content--title")}>Chào mừng đến với Shop Bonsai <span className={cx("home__content--sub-title")}>Vy Nguyễn</span></h2>
-            <p className={cx("home__content--desc")}>Bonsai không chỉ là một loại cây cảnh, mà còn là một nghệ thuật sống. Tại đây, bạn sẽ tìm thấy những thông tin hữu ích về cách chăm sóc, tạo hình và duy trì cây bonsai.</p>
+            <h2 className={cx("home__content--title")}>Chào mừng quý khách đến với Shop Bonsai <span className={cx("home__content--sub-title")}>Vy Nguyễn</span></h2>
+            <p className={cx("home__content--desc")}>Bonsai không chỉ là một loại cây cảnh, mà còn là một nghệ thuật sống. Tại đây, quý khách sẽ tìm thấy những thông tin hữu ích về cách chăm sóc, tạo hình và duy trì cây bonsai.</p>
             <div className={cx("home__content-wrap-img")}>
               <img className={cx("home__content-img")} src={images.bonsai__home_2} alt="" />
             </div>
@@ -67,7 +67,7 @@ const Home = () => {
                 <div data-aos="fade-up" data-aos-duration="1000" className={cx("home__delivery-body--item")}>
                   <h3>Đặt hàng Online dễ dàng</h3>
                   <ol>
-                    <li><span>1. Chọn sản pẩm: </span>Duyệt qua bộ sưu tập bonsai của chúng tôi và chọn sản phẩm bạn muốn</li>
+                    <li><span>1. Chọn sản pẩm: </span>Duyệt qua bộ sưu tập bonsai của chúng tôi và chọn sản phẩm quý khách muốn</li>
                     <li><span>2. Thêm vào giỏ hàng: </span>Nhấn nút "Thêm vào giỏ hàng" để lưu sản phẩm.</li>
                     <li><span>3. Điền thông tin giao hàng: </span>Cung cấp thông tin địa chỉ giao hàng và phương thức thanh toán.</li>
                     <li><span>4. Hoàn Tất Đơn Hàng: </span>Nhấn "Đặt hàng" để hoàn tất quá trình.</li>
@@ -75,8 +75,8 @@ const Home = () => {
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" className={cx("home__delivery-body--item")}>
                   <h3>Giao hàng nhanh chóng</h3>
-                  <p>Chúng tôi sẽ giao hàng nhanh chóng và an toàn. Sau khi bạn đặt hàng, chúng tôi sẽ xử lý đơn hàng ngay lập tức và vận chuyển đến bạn trong thời gian sớm nhất.</p>
-                  <p><span>Thời gian giao hàng: </span>Phụ thuộc vào thời gian đặt hàng và khoảng cách địa lý của bạn với chúng tôi, miền Nam tầm 1-2 ngày, miền Bắc tầm 3-4 ngày, miền Trung tầm 2-3 ngày sẽ nhận được hàng. </p>
+                  <p>Chúng tôi sẽ giao hàng nhanh chóng và an toàn. Sau khi quý khách đặt hàng, chúng tôi sẽ xử lý đơn hàng ngay lập tức và vận chuyển đến quý khách trong thời gian sớm nhất.</p>
+                  <p><span>Thời gian giao hàng: </span>Phụ thuộc vào thời gian đặt hàng và khoảng cách địa lý của quý khách với chúng tôi, miền Nam tầm 1-2 ngày, miền Bắc tầm 3-4 ngày, miền Trung tầm 2-3 ngày sẽ nhận được hàng. </p>
                 </div>
               </div>
             </div>

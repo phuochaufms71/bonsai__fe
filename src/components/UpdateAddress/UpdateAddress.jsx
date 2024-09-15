@@ -8,6 +8,7 @@ import { ACCESS_TOKEN } from "../../constants";
 
 const UpdateAddress = ({ selectedAddress, setIdSelected, setIsUpdate }) => {
   const cx = classNames.bind(styles);
+  const accessToken = localStorage.getItem(ACCESS_TOKEN);
   const dispatch = useDispatch();
   const [dataUpdate, setDataUpdate] = useState({
     firstName: selectedAddress?.firstName || "",
@@ -24,7 +25,6 @@ const UpdateAddress = ({ selectedAddress, setIdSelected, setIsUpdate }) => {
 
   
   const handleUpdateAddress = async (e) => {
-    const accessToken = localStorage.getItem(ACCESS_TOKEN);
     e.preventDefault();
     await dispatch(
       updateAddress({

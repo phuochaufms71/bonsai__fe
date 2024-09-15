@@ -1,8 +1,15 @@
 @import '../Common/Common.module.scss';
 
 .loading {
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  
   &__inner {
+    width: 300px;
+    height: 200px;
     color: $secondary-color;
     display: flex;
     flex-direction: column;

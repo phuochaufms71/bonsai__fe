@@ -1,0 +1,148 @@
+@use "../scss/abtracts";
+@import "../Common/Common.module.scss";
+
+.comment {
+    margin: 10px 0 30px;
+
+    &__item {
+        margin-top: 30px;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    &__info {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__avatar {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        display: block;
+        border-radius: 50%;
+
+        @include abtracts.breakpoint(sm) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__name {
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: #333;
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__textarea {
+        display: block;
+        margin-top: 10px;
+        color: #333;
+        line-height: 1.6;
+        width: 500px;
+        border: 1.5px solid #959595;
+        border-radius: 4px;
+        padding: 10px;
+        outline: none;
+        color: $primary-color;
+
+        &::placeholder {
+            color: #959595;
+        }
+
+        &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 2px 20px $primary-color;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        margin: 10px 0;
+        border: none;
+        outline: none;
+        padding: 10px;
+        background-color: $primary-color;
+        color: #fff;
+        min-width: 100px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    &__desc {
+        margin-top: 10px;
+        font-weight: 500;
+        color: #333;
+        padding-left: 50px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__time {
+        color: #7d7d7d;
+        font-size: 1.4rem;
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.3rem;
+        }
+    }
+
+    &__row {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-left: 50px;
+    }
+
+    &__action {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        &-edit {
+            font-size: 1.5rem;
+            color: $secondary-color;
+            cursor: pointer;
+            font-weight: 500;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &-delete {
+            font-size: 1.5rem;
+            color: $fourary-color;
+            font-weight: 500;
+            cursor: pointer;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__reply {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $thusary-color;
+        cursor: pointer;
+    }
+}

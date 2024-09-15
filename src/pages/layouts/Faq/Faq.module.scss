@@ -2,22 +2,30 @@
 @import "../../../components/Common/Common.module.scss";
 
 .faq {
-    margin: 50px 0;
 
     &__title {
         text-align: center;
         color: $fourary-color;
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: 800;
-        margin-bottom: 30px;
         font-family: "Merienda";
 
+        @include abtracts.breakpoint(xl) {
+            font-size: 3.6rem;
+        }
+        @include abtracts.breakpoint(lg) {
+            font-size: 3rem;
+        }
         @include abtracts.breakpoint(md) {
+            font-size: 2.6rem;
+        }
+        @include abtracts.breakpoint(sm) {
             font-size: 2rem;
         }
     }
 
     &__list {
+        margin-top: 30px;
         display: flex;
         flex-direction: column;
         gap: 30px;

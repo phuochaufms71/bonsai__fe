@@ -4,14 +4,14 @@ import styles from "./Checkout.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useMemo, useState } from "react";
 import { createAddress, deleteAddress, getAddresses } from "../../../redux/address/addressSlice";
-import { ACCESS_TOKEN } from "../../../constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import UpdateAddress from "../../../components/UpdateAddress/UpdateAddress";
 import ModalDeleteAddress from "../../../components/Modal/ModalDeleteAddress/ModalDeleteAddress";
-import { useEffect } from "react";
+import ModalOrder from "../../../components/Modal/ModalOrder/ModalOrder";
+import formatNumberWithSeparator from "../../../constants";
 
 const Checkout = () => {
   const cx = classNames.bind(styles);
@@ -21,11 +21,13 @@ const Checkout = () => {
   const totalAmount = cart.cartTotalAmount;
   const totalCartQuantity = cart.cartTotalQuantity;
   const { addresses } = useSelector(state => state.address);
-  const { email } = useSelector(state => state.auth.user);
+  const { user } = useSelector(state => state.auth);
   const [showCreateAddress, setShowCreateAddress] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   const [isUpdate, setIsUpdate] = useState(false);
   const [idSelected, setIdSelected] = useState('');
   const [showModalDelete, setShowModalDelete] = useState(false);
+  const [isShowOrder, setIsShowOrder] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -42,19 +44,13 @@ const Checkout = () => {
   const handleShowCreateAddress = () => {
     setShowCreateAddress(true)
   }
-  const accessToken = localStorage.getItem(ACCESS_TOKEN);
-  const fetchAddress = async () => {
-    await dispatch(getAddresses(accessToken))
-
-  }
   
   const handleAddNewAddress = async (e) => {
     e.preventDefault();
     await dispatch(createAddress({
-      accessToken,
       newAddress: formData
     }))
-    await dispatch(getAddresses(accessToken))
+    await dispatch(getAddresses())
     setFormData({
       firstName: "",
       lastName: "",
@@ -76,16 +72,11 @@ const Checkout = () => {
 
   const handleDeleteAddress = async (_id) => {
     await dispatch(deleteAddress({
-      accessToken,
       id: _id
     }))
-    await dispatch(getAddresses(accessToken))
+    await dispatch(getAddresses())
     setIdSelected('')
   }
-
-  useEffect(() => {
-    fetchAddress()
-  }, [localStorage.getItem(ACCESS_TOKEN)])
 
   return (
     <section className={cx('checkout')}>
@@ -94,17 +85,16 @@ const Checkout = () => {
           <div className={cx("checkout__left")}>
             <div className={cx("checkout__address")}>
               <h2 className={cx("checkout__address-title")}>Địa chỉ giao hàng</h2>
-              <p className={cx("checkout__address-desc")}>Chúng tôi nên giao hàng cho khách hàng ở địa chỉ nào?</p>
+              <p className={cx("checkout__address-desc")}>Nếu chưa địa chỉ quý khách vui lòng thêm địa chỉ và hãy chọn một địa chỉ để chúng tôi giao hàng cho quý khách.</p>
               {
                 addresses?.map((address, index) => {  
-                  const emailAddress = address.email;
-                  if (email === emailAddress) {
+                  if (user.email === address.email) {
                     return (
                      <div key={index} className={cx("checkout__address-item")}>
-                        <div className={cx("checkout__address-user")}>
-                          <p className={cx("checkout__address-user--name")}><span>{address?.firstName}</span> <span>{address?.lastName}</span></p>
-                          <p className={cx("checkout__address-user--phone")}>(+84) {address?.phoneNumber}</p>
-                          <p className={cx("checkout__address-user--location")}>Số {address?.more}, ấp {address?.hamlet}, xã {address?.commune}, huyện {address?.district}, tỉnh {address?.province}, {address?.country}</p>
+                        <div onClick={() => {setIsChecked(prev => !prev); setIdSelected(address?._id)}} className={`${styles.checkout__address_user} ${isChecked && idSelected === address._id ? styles.checkout__address_checked : ""}`}>
+                          <p className={cx("checkout__address_user--name")}><span>{address?.firstName}</span> <span>{address?.lastName}</span></p>
+                          <p className={cx("checkout__address_user--phone")}>(+84) {address?.phoneNumber}</p>
+                          <p className={cx("checkout__address_user--location")}>Số {address?.more}, ấp {address?.hamlet}, xã {address?.commune}, huyện {address?.district}, tỉnh {address?.province}, {address?.country}</p>
                           <div className={cx("checkout__address-edit")}>
                             <FontAwesomeIcon onClick={() => {setIsUpdate(true); setIdSelected(address?._id) }} className={cx("checkout__address-edit--icon")} icon={faPenToSquare} />
                           </div>
@@ -119,6 +109,8 @@ const Checkout = () => {
                         }
                      </div>
                     )
+                  } else {
+                    return <></>
                   }
                 })
               }
@@ -181,32 +173,37 @@ const Checkout = () => {
                 </form>
               }
 
-              <div className={cx("checkout__food")}>
-                <h3 className={cx("checkout__food-title")}>Chi tiết Bonsai</h3>
+              <div className={cx("checkout__bonsai")}>
+                <h3 className={cx("checkout__bonsai-title")}>Chi tiết Bonsai</h3>
                 {
-                  cartBonsai?.map((food, index) => (
-                    <div key={index} className={cx("checkout__food-item")}>
-                      <div className={cx("checkout__food-content")}>
-                        <div className={cx("checkout__food-wrap-img")}>
-                          <img className={cx("checkout__food-img")} src={food?.image?.secure_url} alt="" />
+                  cartBonsai?.map((bonsai, index) => (
+                    <div key={index} className={cx("checkout__bonsai-item")}>
+                      <div className={cx("checkout__bonsai-content")}>
+                        <div className={cx("checkout__bonsai-wrap-img")}>
+                          <img className={cx("checkout__bonsai-img")} src={bonsai?.image?.secure_url} alt="" />
                         </div>
-                        <div className={cx("checkout__food-body")}>
-                          <p className={cx("checkout__food-body--name")}>{food?.name} x <span>{food?.cartQuantity}</span></p>
-                          <p className={cx("checkout__food-body--price")}>{food?.price} VNĐ</p>
+                        <div className={cx("checkout__bonsai-body")}>
+                          <p className={cx("checkout__bonsai-body--name")}>{bonsai?.name} x <span>{bonsai?.cartQuantity}</span></p>
+                          <p className={cx("checkout__bonsai-body--price")}>{formatNumberWithSeparator((bonsai?.price), " ")} VNĐ</p>
                         </div>
                       </div>
-                      <p className={cx("checkout__food-total")}>{(food?.price * food?.cartQuantity)} VNĐ</p>
+                      <p className={cx("checkout__bonsai-total")}>{formatNumberWithSeparator((bonsai?.price * bonsai?.cartQuantity), " ")} VNĐ</p>
                     </div>
                   ))
                 }
-                <div className={cx("checkout__food-bottom")}> 
-                  <div className={cx("checkout__food-prev-shopping")}>
-                    <FontAwesomeIcon className={cx("checkout__food-prev-shopping--icon")} icon={faChevronLeft} />
-                    <Link className={cx("checkout__food-prev-shopping--link")} to="/shopping">Tiếp tục mua bonsai</Link>
+                <div className={cx("checkout__bonsai-bottom")}> 
+                  <div className={cx("checkout__bonsai-prev-shopping")}>
+                    <FontAwesomeIcon className={cx("checkout__bonsai-prev-shopping--icon")} icon={faChevronLeft} />
+                    <Link className={cx("checkout__bonsai-prev-shopping--link")} to="/shopping">Tiếp tục mua bonsai</Link>
                   </div>
-                  <Link to="/cart/checkout/payment" className={cx("checkout__food-next")}>
-                    Tiếp tục
-                  </Link>
+                  { 
+                    isChecked && <p onClick={() => setIsShowOrder(true)} className={cx("checkout__bonsai-next")}>
+                      Tiếp tục
+                    </p> 
+                  }
+                  {
+                    isShowOrder && <ModalOrder selectedAddress={selectedAddress} setIsShowOrder={setIsShowOrder} />
+                  }
                 </div>
               </div>
             </div>
@@ -214,20 +211,20 @@ const Checkout = () => {
           <div className={cx("checkout__right")}>
             <div className={cx("checkout__fee")}>
               <div className={cx("checkout__fee-body")}>
-                <p className={cx("checkout__fee-title")}>Tổng bonsai:</p>
-                <p className={cx("checkout__fee-number")}>{totalAmount} VNĐ</p>
+                <p className={cx("checkout__fee-title")}>Tổng phụ:</p>
+                <p className={cx("checkout__fee-number")}>{formatNumberWithSeparator((totalAmount), " ")} VNĐ</p>
               </div>
               <div className={cx("checkout__fee-body")}>
-                <p className={cx("checkout__fee-title")}>Thuế:</p>
-                <p className={cx("checkout__fee-number")}>{(2500 * totalCartQuantity)} VNĐ</p>
+                <p className={cx("checkout__fee-title")}>Phí:</p>
+                <p className={cx("checkout__fee-number")}>{formatNumberWithSeparator((2500 * totalCartQuantity), " ")} VNĐ</p>
               </div>
               <div className={cx("checkout__fee-body")}>
                 <p className={cx("checkout__fee-title")}>Cước:</p>
-                <p className={cx("checkout__fee-number")}>{(3500 * totalCartQuantity)} VNĐ</p>
+                <p className={cx("checkout__fee-number")}>{formatNumberWithSeparator((3500 * totalCartQuantity), " ")} VNĐ</p>
               </div>
               <div className={cx("checkout__fee-total")}>
-                <p className={cx("checkout__fee-total--title")}>Tổng thanh toán</p>
-                <p className={cx("checkout__fee-total--number")}>{(totalAmount + 2500 * totalCartQuantity + 3500 * totalCartQuantity)} VNĐ</p>
+                <p className={cx("checkout__fee-total--title")}>Tổng cộng</p>
+                <p className={cx("checkout__fee-total--number")}>{formatNumberWithSeparator((totalAmount + 2500 * totalCartQuantity + 3500 * totalCartQuantity), " ")} VNĐ</p>
               </div>
             </div>
           </div>

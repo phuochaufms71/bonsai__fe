@@ -2,46 +2,49 @@
 @import "../../../components/Common/Common.module.scss";
 
 .contact {
-    margin-top: 50px;
     
     &__title {
-        margin: 30px 0 50px;
         text-align: center;
         font-size: 4rem;
         color: $fourary-color;
         font-family: "Merienda";
-        font-weight: 900;
+        font-weight: 800;
 
-        @include abtracts.breakpoint(lg) {
+        @include abtracts.breakpoint(xl) {
             font-size: 3.6rem;
         }
 
-        @include abtracts.breakpoint(md) {
+        @include abtracts.breakpoint(lg) {
             font-size: 3rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2.6rem;
             margin-bottom: 30px;
         }
 
         @include abtracts.breakpoint(sm) {
-            font-size: 2.4rem;
+            font-size: 2rem;
         }
     }
 
     &__sub-title {
+        margin-top: 20px;
         text-align: center;
         font-size: 3rem;
         font-family: "Merienda";
-        font-weight: 800;
+        font-weight: 500;
 
         @include abtracts.breakpoint(lg) {
-            font-size: 2.4rem;
+            font-size: 2.2rem;
         }
 
         @include abtracts.breakpoint(md) {
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         @include abtracts.breakpoint(sm) {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
         }
     }
 
@@ -52,11 +55,7 @@
         line-height: 1.6;
 
         @include abtracts.breakpoint(md) {
-            font-size: 1.4rem;
-        }
-
-        @include abtracts.breakpoint(sm) {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
         
     }
@@ -108,12 +107,13 @@
 
         &-desc {
             margin-top: 10px;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: rgba(0, 0, 0, 0.6);
             text-align: center;
+            line-height: 1.6;
 
             @include abtracts.breakpoint(md) {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
             }
         }
 
@@ -158,16 +158,13 @@
 
         &-label {
             font-size: 1.6rem;
-            color: $secondary-color;
+            color: $primary-color;
             font-weight: 600;
 
             @include abtracts.breakpoint(md) {
                 font-size: 1.5rem;
             }
 
-            @include abtracts.breakpoint(sm) {
-                font-size: 1.4rem;
-            }
         }
 
         &-input {
@@ -176,10 +173,11 @@
             border-radius: 4px;
             border: 1px solid #b4b4b4;
             padding: 8px;
-            color: $secondary-color;
+            color: $primary-color;
 
             &:focus {
-                border-color: $secondary-color;
+                border-color: $primary-color;
+                box-shadow: 0 5px 50px $primary-color;
             }
         }
 
@@ -190,7 +188,7 @@
             width: 100%;
             padding: 12px;
             color: #fff;
-            background-color: $secondary-color;
+            background-color: $primary-color;
             border-radius: 99px;
             margin: 30px auto 0;
             font-size: 1.7rem;
@@ -211,7 +209,7 @@
 
         &-title {
             font-size: 2rem;
-            color: $secondary-color;
+            color: $fourary-color;
         }
 
         &-iframe {

@@ -2,16 +2,13 @@
 @import "../../../components/Common/Common.module.scss";
 
 .home {
+    margin-top: 120px;
+    
     &__inner {
         overflow: hidden;
     }
 
     &__content {
-        margin-top: 150px;
-        
-        @include abtracts.breakpoint(sm) {
-            margin-top: 85px;
-        }
 
         &--title {
             text-align: center;
@@ -170,83 +167,6 @@
         }
     }
 
-    .carousel {
-        display: flex;
-        justify-content: center;
-
-        &__img {
-            border-radius: 8px;
-            width: 500px;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-    }
-
-    &__category {
-        &-top {
-            margin: 50px 0 0 50px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            @include abtracts.breakpoint(md) {
-                margin: 70px 0 0 20px;
-            }
-        }
-
-        &-icon {
-            display: block;
-            width: 25px;
-            height: 25px;
-            object-fit: cover;
-
-            @include abtracts.breakpoint(md) {
-                width: 20px;
-                height: 20px;
-            }
-        }
-
-        &-title {
-            color: $fourary-color;
-            font-size: 2rem;
-
-            @include abtracts.breakpoint(md) {
-                font-size: 1.8rem;
-            }
-        }
-
-        &-list-img {
-            margin: 30px 0;
-
-            @include abtracts.breakpoint(sm) {
-                margin-top: 20px;
-            }
-        }
-
-        &-wrap-img {
-            border-radius: 10px;
-            padding: 20px;
-            border: 1px solid $fourary-color;
-        }
-
-        &-img {
-            margin: 0 auto;
-            display: block;
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-        }
-
-        &-name {
-            text-align: center;
-            color: $fourary-color;
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-top: 20px;
-        }
-    }
-
     &__about {
         margin-top: 100px;
         display: flex;
@@ -332,7 +252,6 @@
             }
 
             @include abtracts.breakpoint(md) {
-                font-size: 1.5rem;
                 text-align: center;
             }
         }
@@ -409,7 +328,7 @@
     }
     
     &__delivery {
-        margin-top: 50px;
+        margin-top: 100px;
         display: flex;
         gap: 30px;
         justify-content: center;

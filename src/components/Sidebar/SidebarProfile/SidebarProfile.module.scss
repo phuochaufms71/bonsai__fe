@@ -29,7 +29,7 @@
 
         &--icon {
             font-size: 1.8rem;
-            color: $primary-color;
+            color: $fourary-color;
 
             @include abtracts.breakpoint(md) {
                 font-size: 1.6rem;
@@ -49,7 +49,7 @@
 }
 
 .active {
-    background-color: $secondary-color;
+    background-color: $fourary-color;
     transition: 0.3s;
 }
 

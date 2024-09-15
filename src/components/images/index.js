@@ -49,6 +49,12 @@ import img_6 from "./img-6.jfif";
 import img_7 from "./img-7.jfif";
 import qr_sacombank from "./qr_sacombank.jpg";
 import logo_sacombank from "./logo_sacombank.png";
+import blog_img_1 from "./kham_pha_nghe_thuat_bonsai.jfif";
+import blog_img_2 from "./chon_cay_phu_hop.jfif";
+import blog_img_3 from "./meo_cham_soc_bonsai.jfif";
+import blog_img_4 from "./tao_hinh_bonsai.jfif";
+import blog_img_5 from "./triet_ly_bonsai.jfif";
+
 export const images = {
     logo_bonsai,
     bonsai__home,
@@ -100,5 +106,10 @@ export const images = {
     img_6,
     img_7,
     qr_sacombank,
-    logo_sacombank
+    logo_sacombank,
+    blog_img_1,
+    blog_img_2,
+    blog_img_3,
+    blog_img_4,
+    blog_img_5,
 }

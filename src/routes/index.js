@@ -9,9 +9,6 @@ import Register from "../pages/user/Register/Register";
 import ResetPassword from "../pages/user/ResetPassword/ResetPassword";
 import Logout from "../pages/user/Logout/Logout";
 
-import AdminGetListBlog from "../pages/admin/AdminGetListBlog/AdminGetListBlog";
-import AdminCreateBlog from "../pages/admin/AdminCreateBlog/AdminCreateBlog";
-import Admin from "../pages/admin/Admin";
 import Analytics from "../pages/admin/Analytics/Analytics";
 import AdminUpdateFood from "../pages/admin/AdminUpdateBonsai/AdminUpdateBonsai";
 import About from "../pages/layouts/About/About";
@@ -26,6 +23,7 @@ import Notification from "../pages/layouts/Notification/Notification";
 import AdminGetListBonsai from "../pages/admin/AdminGetListBonsai/AdminGetListBonsai";
 import AdminCreateBonsai from "../pages/admin/AdminCreateBonsai/AdminCreateBonsai";
 import BonsaiDetail from "../pages/product/BonsaiDetail/BonsaiDetail";
+import Bill from "../components/Bill/Bill";
 
 export const routePublic = [
     { path: "/", component: Home },
@@ -52,11 +50,9 @@ export const routeAuthorization = [
 ];
 
 export const routeAdmin = [
-    { path: "/", component: Admin},
+    { path: "/bill", component: Bill},
     { path: "/analytics", component: Analytics},
     { path: "/admin-bonsai/lists", component: AdminGetListBonsai },
     { path: "/admin-bonsai/create", component: AdminCreateBonsai },
     { path: "/admin-bonsai/lists/:id", component: AdminUpdateFood },
-    { path: "/admin-blog/lists", component: AdminGetListBlog },
-    { path: "/admin-blog/create", component: AdminCreateBlog },
 ]

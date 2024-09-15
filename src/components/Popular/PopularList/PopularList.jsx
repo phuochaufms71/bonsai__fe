@@ -7,11 +7,12 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { getBonsais } from "../../../redux/bonsai/bonsaiSlice";
-import { ACCESS_TOKEN } from "../../../constants";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../../redux/cart/cartSlice";
 import { ToastContainer } from "react-toastify";
 import Aos from "aos";
+import formatNumberWithSeparator from "../../../constants";
+import { addFavouriteBonsai } from "../../../redux/bonsai/favouriteBonsaiSlice";
 
 const PopularList = () => {
   const cx = classNames.bind(styles);
@@ -22,20 +23,21 @@ const PopularList = () => {
   const [idBonsai, setIdBonsai] = useState("");
 
   const fetchBonsais = async () => {
-    const accessToken = localStorage.getItem(ACCESS_TOKEN);
-    if (accessToken) {
-      await dispatch(getBonsais(accessToken));
-    }
+    await dispatch(getBonsais());
   };
 
   const handleAddToCart = (bonsai) => {
     dispatch(addToCart(bonsai))
   }
 
+  const handleAddFavouriteBonsai = (bonsai) => {
+    dispatch(addFavouriteBonsai(bonsai))
+}
+
   useEffect(() => {
     Aos.init()
     fetchBonsais();
-  }, [localStorage.getItem(ACCESS_TOKEN)]);
+  }, []);
 
   return (
     <>
@@ -46,22 +48,14 @@ const PopularList = () => {
               <Link to={`/shopping/${bonsai._id}`}>
                 <img className={cx("popular__item-img")} src={bonsai?.image.secure_url} alt="" />
               </Link>
-              <FontAwesomeIcon
-                onClick={() => {
-                  setFavourite((prev) => !prev);
-                  setIdBonsai(bonsai?._id);
-                }}
-                icon={faHeart}
-                className={`${
-                  idBonsai === bonsai._id && favourite ? styles.active : ""
-                } ${styles.popular__heart}`}
-              />
+              <FontAwesomeIcon onClick={() => {setFavourite(true); setIdBonsai(bonsai?._id); handleAddFavouriteBonsai(bonsai)}} icon={faHeart} className={`${idBonsai === bonsai._id && favourite ? styles.active : "" } ${styles.popular__heart}`} />
             </div>
             <p className={cx("popular__item-name")}>{bonsai?.name}</p>
+            <p className={cx("popular__item-code")}>Mã số: <span>{bonsai?.code}</span></p>
             <p className={cx("popular__item-discount")}>
-              Giảm 20% cho lần mua thứ 5 tại Shop Bonsai Vy Nguyễn{" "}
+              Giảm 5% cho lần mua thứ 5 tại Shop Bonsai Vy Nguyễn{" "}
             </p>
-            <p className={cx("popular__item-price")}>{bonsai?.price} VNĐ</p>
+            <p className={cx("popular__item-price")}>{formatNumberWithSeparator((bonsai?.price), " ")} VNĐ</p>
             <div className={cx("popular__item-wrap-btn")}>
               <Link to={`/shopping/${bonsai._id}`} className={cx("popular__item-btn--readmore")}>
                 Đọc thêm

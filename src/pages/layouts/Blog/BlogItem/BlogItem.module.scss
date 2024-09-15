@@ -2,7 +2,7 @@
 @import "../../../../components/Common/Common.module.scss";
 
 .blog-item {
-    margin: 150px auto 100px;
+    margin: 50px auto;
 
     @include abtracts.breakpoint(md) {
         margin: 50px 0;
@@ -10,10 +10,11 @@
 
     &__title {
         font-size: 2.6rem;
-        color: $secondary-color;
+        color: $fourary-color;
         font-family: "Merienda";
         font-weight: 800;
         text-align: center;
+        line-height: 1.6;
 
         @include abtracts.breakpoint(md) {
             font-size: 2rem;
@@ -27,13 +28,17 @@
     &__wrap-img {
         margin: 30px auto;
         border-radius: 10px;
-        width: 100%;
+        width: 500px;
         height: 300px;
         overflow: hidden;
         border: 1px solid $fourary-color;
 
         @include abtracts.breakpoint(md) {
             height: 200px;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            width: 100%;
         }
     }
 
@@ -49,14 +54,70 @@
         }
     }
 
+    &__sub-title {
+        color: $primary-color;
+        margin-top: 30px;
+        font-family: "Merienda";
+        font-weight: 800;
+        font-size: 2.2rem;
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 1.8rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 1.6rem;
+        }
+    }
+
     &__content {
-        color: #959595;
-        line-height: 1.8;
-        margin-top: 20px;
+        color: gray;
+        line-height: 1.6;
+        margin-top: 10px;
 
         @include abtracts.breakpoint(md) {
             font-size: 1.5rem;
             text-align: justify;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__list {
+        margin-top: 20px;
+        color: $fourary-color;
+        font-weight: 500;
+        font-size: 1.8rem;
+
+        @include abtracts.breakpoint (md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__item {
+        color: #333;
+        line-height: 1.6;
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-top: 10px;
+
+        @include abtracts.breakpoint (md) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__desc {
+        line-height: 1.6;
+        font-weight: 500;
+
+        @include abtracts.breakpoint (md) {
+            font-size: 1.5rem;
+        }
+
+        @include abtracts.breakpoint (sm) {
+            font-size: 1.4rem;
         }
     }
 }

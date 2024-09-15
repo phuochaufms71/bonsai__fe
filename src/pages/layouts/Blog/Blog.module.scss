@@ -2,11 +2,10 @@
 @import "../../../components/Common/Common.module.scss";
 
 .blog {
-    margin: 50px 0 30px 0;
+    margin: 50px 0;
 
     &__title {
-        margin: 20px 0;
-        color: $secondary-color;
+        color: $fourary-color;
         font-size: 4rem;
         font-family: "Merienda";
         text-align: center;
@@ -35,6 +34,7 @@
         justify-content: center;
         align-items: stretch;
         flex-wrap: wrap;
+        margin-top: 20px;
     }
 
     &__item {
@@ -51,6 +51,7 @@
         &-wrap-img {
             overflow: hidden;
             height: 200px;
+            border-bottom: 1px solid #e6e6e6;
         }
 
         &-img {
@@ -70,7 +71,7 @@
             font-size: 1.8rem;
             font-weight: 500;
             color: #333;
-
+            line-height: 1.6;
         }
 
         &-desc {

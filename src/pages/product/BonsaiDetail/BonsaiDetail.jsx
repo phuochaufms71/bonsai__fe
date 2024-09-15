@@ -4,33 +4,33 @@ import styles from "./BonsaiDetail.module.scss";
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import { getBonsaiDetail } from "../../../redux/bonsai/bonsaiSlice";
-import { ACCESS_TOKEN } from "../../../constants";
 import { addToCart } from "../../../redux/cart/cartSlice";
-import Loading from "../../../components/Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Loading from "../../../components/Loading/Loading";
+import Comment from "../../../components/Comment/Comment";
+import formatNumberWithSeparator from "../../../constants";
 
 const BonsaiDetail = () => {
     const cx = classNames.bind(styles);
     const dispatch = useDispatch();
+    const { user } = useSelector(state => state.auth);
     const { id } = useParams();
     const bonsai = useSelector(state => state.bonsai.bonsai);
-
+  
     const handleAddToCart = (bonsai) => {
       dispatch(addToCart(bonsai))
     }
 
     const fetchBonsaiDetail = async () => {
-      const accessToken = localStorage.getItem(ACCESS_TOKEN);
-      await dispatch(getBonsaiDetail({
-        accessToken,
+      dispatch(getBonsaiDetail({
         id
       }))
     }
 
     useEffect(() => {
       fetchBonsaiDetail()
-    }, [localStorage.getItem(ACCESS_TOKEN)])
+    }, [id])
 
     return bonsai ? ( 
       <>
@@ -49,8 +49,7 @@ const BonsaiDetail = () => {
               <div className={cx("bonsai-detail__right")}>
                 <h2 className={cx("bonsai-detail__name")}>{bonsai?.name}</h2>
                 <p className={cx("bonsai-detail__code")}>Mã số: <span>{bonsai?.code}</span></p>
-                <p className={cx("bonsai-detail__price")}>Giá: {bonsai?.price} VNĐ</p>
-                <p className={cx("bonsai-detail__desc")}>{bonsai?.description}</p>
+                <p className={cx("bonsai-detail__price")}>Giá: {formatNumberWithSeparator((bonsai?.price), " ")} VNĐ</p>
                 {bonsai?.category === "khế" && <ul className={cx("bonsai-detail__parameter")}>
                   Thông số của Bonsai
                   <li><span>Chiều cao: </span>{bonsai?.chieuCao}</li>
@@ -59,14 +58,19 @@ const BonsaiDetail = () => {
                 </ul>}
                 <div>
                   <button onClick={() => handleAddToCart(bonsai)} className={cx("bonsai-detail__addtocart")}>Thêm vào giỏ hàng</button>
-                </div>
-  
+                </div>  
                 <p className={cx("bonsai-detail__category")}><span>Loại:</span> {bonsai?.category}</p>
               </div>
             </div>
+            <p className={cx("bonsai-detail__desc")}>{bonsai?.description}</p>
           </div>
         </section>
         <ToastContainer />
+
+        {/* Comment */}
+        {
+          user?.email && <Comment id={id} />
+        }
       </> 
     ) : <Loading />
 }

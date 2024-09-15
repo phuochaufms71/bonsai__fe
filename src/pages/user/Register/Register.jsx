@@ -61,7 +61,7 @@ const Register = () => {
           </div>
           <div className={cx("register__form-group")}>
             <label className={cx("register__label")}>Số điện thoại</label>
-            <input type="number" className={cx("register__input")} value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required/>
+            <input type="text" className={cx("register__input")} value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} required/>
           </div>
           <div className={cx("register__form-group")}>
             <label className={cx("register__label")}>Email</label>

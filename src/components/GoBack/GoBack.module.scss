@@ -1,0 +1,13 @@
+@use "../scss/abtracts";
+@import "../Common/Common.module.scss";
+
+.go-back {
+    margin-top: 120px;
+
+    &__icon {
+        color: $fourary-color;
+        font-size: 1.8rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}

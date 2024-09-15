@@ -10,6 +10,7 @@ import { faArrowLeft, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import ModalLogin from "../../../components/Modal/ModalLogin/ModalLogin.jsx";
+import formatNumberWithSeparator from "../../../constants/index.js";
 
 const Cart = () => {
     const cx = classNames.bind(styles);
@@ -71,7 +72,7 @@ const Cart = () => {
                   </div>
                   <div className={cx("cart__item-info")}>
                     <p className={cx("cart__item-name")}>{cartBonsai?.name}</p>
-                    <p className={cx("cart__item-price")}>{cartBonsai?.price} VNĐ</p>
+                    <p className={cx("cart__item-price")}>{formatNumberWithSeparator((cartBonsai?.price), " ")} VNĐ</p>
                   </div>
                   <div className={cx("cart__item-action")}>
                     <button className={cx("cart__item-decrease")} onClick={() => handleDecreaseBonsai(cartBonsai)}>-</button>
@@ -97,9 +98,9 @@ const Cart = () => {
         <div className={cx("cart__total")}>
           <h3 className={cx("cart__total-title")}>Thanh toán giỏ hàng</h3>
           <div>
-            <p className={cx("cart__total-item")}><span>Tổng tiền bonsai: </span>{parseInt(cart.cartTotalAmount)} VNĐ</p>
-            <p className={cx("cart__total-item")}><span>Thuế (VNĐ/bonsai): </span>2500 VNĐ</p>
-            <p className={cx("cart__total-item")}><span>Cước (VNĐ/bonsai): </span>3500 VNĐ</p>
+            <p className={cx("cart__total-item")}><span>Tổng tiền bonsai: </span>{formatNumberWithSeparator((cart.cartTotalAmount), " ")} VNĐ</p>
+            <p className={cx("cart__total-item")}><span>Phí (VNĐ/bonsai): </span>2 500 VNĐ</p>
+            <p className={cx("cart__total-item")}><span>Cước (VNĐ/bonsai): </span>3 500 VNĐ</p>
           </div>
           <button onClick={handleCheckLogin} className={cx("cart__total-checkout")}>Kiểm tra</button>
           {

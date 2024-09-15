@@ -84,33 +84,7 @@
         }
     }
     
-    &__thomnail {
-        border: 1px solid $fourary-color;
-        width: 430px;
-        height: 430px;
-        object-fit: cover;
-        display: block;
-
-        @include abtracts.breakpoint(xl) {
-            width: 350px;
-            height: 350px;
-        }  
-
-        @include abtracts.breakpoint(lg) {
-            width: 310px;
-            height:310px;
-        }        
-
-        @include abtracts.breakpoint(md) {
-            width: 270px;
-            height: 270px;
-        }
-
-        @include abtracts.breakpoint(sm) {
-            width: 230px;
-            height: 230px;
-        }
-    }
+    
 
     &__right {
         @include abtracts.breakpoint(sm) {
@@ -259,19 +233,35 @@
             color: $fourary-color;
         }
     }
+}
 
-    &__tags {
-        margin-top: 20px;
-        font-size: 1.8rem;
+.bonsai-detail__thomnail {
+    border: 1px solid $fourary-color;
+    width: 430px;
+    height: 430px;
+    object-fit: cover;
+    display: block;
 
-        @include abtracts.breakpoint(sm) {
-            text-align: center;
-        }
+    @include abtracts.breakpoint(xl) {
+        width: 350px;
+        height: 350px;
+    }  
 
-        span {
-            font-weight: 500;
-            color: $fourary-color;
-        }
+    @include abtracts.breakpoint(lg) {
+        width: 310px;
+        height:310px;
+    }        
 
+    @include abtracts.breakpoint(md) {
+        width: 270px;
+        height: 270px;
+    }
+
+    @include abtracts.breakpoint(sm) {
+        width: 230px;
+        height: 230px;
     }
 }
+
+
+
