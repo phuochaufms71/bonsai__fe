@@ -184,10 +184,10 @@ const Checkout = () => {
                         </div>
                         <div className={cx("checkout__bonsai-body")}>
                           <p className={cx("checkout__bonsai-body--name")}>{bonsai?.name} x <span>{bonsai?.cartQuantity}</span></p>
-                          <p className={cx("checkout__bonsai-body--price")}>{formatNumberWithSeparator((bonsai?.price), " ")} VNĐ</p>
+                          <p className={cx("checkout__bonsai-body--price")}>{formatNumberWithSeparator(bonsai?.price)} VNĐ</p>
                         </div>
                       </div>
-                      <p className={cx("checkout__bonsai-total")}>{formatNumberWithSeparator((bonsai?.price * bonsai?.cartQuantity), " ")} VNĐ</p>
+                      <p className={cx("checkout__bonsai-total")}>{formatNumberWithSeparator(bonsai?.price * bonsai?.cartQuantity)} VNĐ</p>
                     </div>
                   ))
                 }
@@ -212,19 +212,19 @@ const Checkout = () => {
             <div className={cx("checkout__fee")}>
               <div className={cx("checkout__fee-body")}>
                 <p className={cx("checkout__fee-title")}>Tổng phụ:</p>
-                <p className={cx("checkout__fee-number")}>{formatNumberWithSeparator((totalAmount), " ")} VNĐ</p>
+                <p className={cx("checkout__fee-number")}>{formatNumberWithSeparator(totalAmount)} VNĐ</p>
               </div>
               <div className={cx("checkout__fee-body")}>
                 <p className={cx("checkout__fee-title")}>Phí:</p>
-                <p className={cx("checkout__fee-number")}>{formatNumberWithSeparator((2500 * totalCartQuantity), " ")} VNĐ</p>
+                <p className={cx("checkout__fee-number")}>{formatNumberWithSeparator(2500 * totalCartQuantity)} VNĐ</p>
               </div>
               <div className={cx("checkout__fee-body")}>
                 <p className={cx("checkout__fee-title")}>Cước:</p>
-                <p className={cx("checkout__fee-number")}>{formatNumberWithSeparator((3500 * totalCartQuantity), " ")} VNĐ</p>
+                <p className={cx("checkout__fee-number")}>{formatNumberWithSeparator(3500 * totalCartQuantity)} VNĐ</p>
               </div>
               <div className={cx("checkout__fee-total")}>
                 <p className={cx("checkout__fee-total--title")}>Tổng cộng</p>
-                <p className={cx("checkout__fee-total--number")}>{formatNumberWithSeparator((totalAmount + 2500 * totalCartQuantity + 3500 * totalCartQuantity), " ")} VNĐ</p>
+                <p className={cx("checkout__fee-total--number")}>{formatNumberWithSeparator(totalAmount + 2500 * totalCartQuantity + 3500 * totalCartQuantity)} VNĐ</p>
               </div>
             </div>
           </div>

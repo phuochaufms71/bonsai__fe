@@ -15,16 +15,8 @@ const Bill = () => {
         await dispatch(getOrders(accessToken))
     }
 
-    function formatNumberWithSeparator(num, separator = ',') {
-        const numStr = num;
-        const parts = numStr.split(' ');
-        const integerPart = parts[0];
-        const decimalPart = parts.length > 1 ? ' ' + parts[1] : '';
-        
-        // Thay đổi dấu phân cách cho phần nguyên
-        const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
-        
-        return formattedInteger + decimalPart;
+    function formatNumberWithSeparator(num) {
+        return num.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     }
 
     useEffect(() => {
@@ -57,11 +49,11 @@ const Bill = () => {
                                                             <div className={cx("bill__order-detail")}>
                                                                 <p className={cx("bill__order-name")}><span>Tên:</span> {cartOrder?.name}</p>
                                                                 <p className={cx("bill__order-code")}><span>Mã số:</span> {cartOrder?.code}</p>
-                                                                <p className={cx("bill__order-price")}><span>Giá:</span> {formatNumberWithSeparator((cartOrder?.price), " ")} VNĐ</p>
+                                                                <p className={cx("bill__order-price")}><span>Giá:</span> {formatNumberWithSeparator(cartOrder?.price)} VNĐ</p>
                                                                 <p className={cx("bill__order-quantity")}><span>Số lượng:</span> {cartOrder?.cartQuantity}</p>
                                                             </div>
                                                             <p className={cx("bill__order-total-item")}>
-                                                                <span>Tổng:</span> {formatNumberWithSeparator((cartOrder?.cartQuantity * cartOrder?.price), " ")} VNĐ
+                                                                <span>Tổng:</span> {formatNumberWithSeparator(cartOrder?.cartQuantity * cartOrder?.price)} VNĐ
                                                             </p>
                                                         </div>
                                                     ))
@@ -69,16 +61,16 @@ const Bill = () => {
                                             </div>
                                             <div className={cx("bill__money")}>
                                                 <p className={cx("bill__subtotal")}>
-                                                    <span>Tổng bonsai</span>: {formatNumberWithSeparator((order?.bonsaiOrder?.cartTotalAmount), " ")} VNĐ
+                                                    <span>Tổng bonsai</span>: {formatNumberWithSeparator(order?.bonsaiOrder?.cartTotalAmount)} VNĐ
                                                 </p>
                                                 <p className={cx("bill__fee")}>
-                                                    <span>Phí</span>: {formatNumberWithSeparator((order?.bonsaiOrder?.cartTotalQuantity * 2500), " ")} VNĐ
+                                                    <span>Phí</span>: {formatNumberWithSeparator(order?.bonsaiOrder?.cartTotalQuantity * 2500)} VNĐ
                                                 </p>
                                                 <p className={cx("bill__freight")}>
-                                                    <span>Cước</span>: {formatNumberWithSeparator((order?.bonsaiOrder?.cartTotalQuantity * 3500), " ")} VNĐ
+                                                    <span>Cước</span>: {formatNumberWithSeparator(order?.bonsaiOrder?.cartTotalQuantity * 3500)} VNĐ
                                                 </p>
                                                 <p className={cx("bill__grandtotal")}>
-                                                    <span>Tổng cộng</span>: {formatNumberWithSeparator((order?.bonsaiOrder?.cartTotalAmount + order?.bonsaiOrder?.cartTotalQuantity * 2500 + order?.bonsaiOrder?.cartTotalQuantity * 3500), " ")} VNĐ
+                                                    <span>Tổng cộng</span>: {formatNumberWithSeparator(order?.bonsaiOrder?.cartTotalAmount + order?.bonsaiOrder?.cartTotalQuantity * 2500 + order?.bonsaiOrder?.cartTotalQuantity * 3500)} VNĐ
                                                 </p>
                                             </div>
                                         </div>

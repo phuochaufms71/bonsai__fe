@@ -3,7 +3,6 @@ import styles from "./Favourite.module.scss";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { images } from "../../images";
 import { Link } from "react-router-dom";
 import formatNumberWithSeparator from "../../../constants";
 
@@ -30,38 +29,9 @@ const Favourite = () => {
           </div>
           <p className={cx("favourite__item-name")}>{favourite?.name}</p>
           <p className={cx("favourite__item-discount")}>
-            Giảm 20% cho lần mua thứ 5 tại Shop Bonsai Vy Nguyễn{" "}
+            Giảm 5% cho lần mua thứ 5 tại Shop Bonsai Vy Nguyễn{" "}
           </p>
-          <p className={cx("favourite__item-price")}>{formatNumberWithSeparator((favourite?.price), " ")} VNĐ</p>
-          <div className={cx("favourite__item-rate")}>
-            <div className={cx("favourite__item-wrap-star")}>
-              <img
-                className={cx("favourite__item-star")}
-                src={images.star_icon}
-                alt=""
-              />
-              <img
-                className={cx("favourite__item-star")}
-                src={images.star_icon}
-                alt=""
-              />
-              <img
-                className={cx("favourite__item-star")}
-                src={images.star_icon}
-                alt=""
-              />
-              <img
-                className={cx("favourite__item-star")}
-                src={images.star_icon}
-                alt=""
-              />
-              <img
-                className={cx("favourite__item-star")}
-                src={images.star_icon}
-                alt=""
-              />
-            </div>
-          </div>
+          <p className={cx("favourite__item-price")}>{formatNumberWithSeparator(favourite?.price)} VNĐ</p>
           <p className={cx("favourite__item-like")}>Lượt thích: {favourite.favouriteQuantity}</p>
         </Link>
       ))}

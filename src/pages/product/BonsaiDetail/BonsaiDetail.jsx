@@ -49,7 +49,7 @@ const BonsaiDetail = () => {
               <div className={cx("bonsai-detail__right")}>
                 <h2 className={cx("bonsai-detail__name")}>{bonsai?.name}</h2>
                 <p className={cx("bonsai-detail__code")}>Mã số: <span>{bonsai?.code}</span></p>
-                <p className={cx("bonsai-detail__price")}>Giá: {formatNumberWithSeparator((bonsai?.price), " ")} VNĐ</p>
+                <p className={cx("bonsai-detail__price")}>Giá: {formatNumberWithSeparator(bonsai?.price)} VNĐ</p>
                 {bonsai?.category === "khế" && <ul className={cx("bonsai-detail__parameter")}>
                   Thông số của Bonsai
                   <li><span>Chiều cao: </span>{bonsai?.chieuCao}</li>

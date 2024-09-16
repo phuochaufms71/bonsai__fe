@@ -5,16 +5,17 @@ export const NOTIFICATION_TYPES = {
 
 export const ACCESS_TOKEN = 'access_token';
 
-function formatNumberWithSeparator(num, separator = ',') {
-    const numStr = num;
-    const parts = numStr.split(' ');
-    const integerPart = parts[0];
-    const decimalPart = parts.length > 1 ? ' ' + parts[1] : '';
-    
-    // Thay đổi dấu phân cách cho phần nguyên
-    const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
-    
-    return formattedInteger + decimalPart;
+function formatNumberWithSeparator(num) {
+    return num.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }
+
+// function formatNumber(number) {
+//     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+// }
+
+// // Ví dụ sử dụng
+// const number = 700000;
+// const formattedNumber = formatNumber(number);
+// console.log(formattedNumber); // Kết quả: "700 000"
 
 export default formatNumberWithSeparator;

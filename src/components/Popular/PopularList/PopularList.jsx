@@ -55,7 +55,7 @@ const PopularList = () => {
             <p className={cx("popular__item-discount")}>
               Giảm 5% cho lần mua thứ 5 tại Shop Bonsai Vy Nguyễn{" "}
             </p>
-            <p className={cx("popular__item-price")}>{formatNumberWithSeparator((bonsai?.price), " ")} VNĐ</p>
+            <p className={cx("popular__item-price")}>{formatNumberWithSeparator(bonsai?.price)} VNĐ</p>
             <div className={cx("popular__item-wrap-btn")}>
               <Link to={`/shopping/${bonsai._id}`} className={cx("popular__item-btn--readmore")}>
                 Đọc thêm

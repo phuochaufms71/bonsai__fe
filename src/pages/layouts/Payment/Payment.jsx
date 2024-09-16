@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { images } from "../../../components/images";
+import formatNumberWithSeparator from "../../../constants";
 
 const Payment = () => {
   const cx = classNames.bind(styles);
@@ -33,7 +34,7 @@ const Payment = () => {
                 </div>
                 <div className={cx("payment__item")}>
                   <p className={cx("payment__item-title")}>Số tiền cần thanh toán:</p>
-                  <p className={cx("payment__item-total")}>{cart.cartTotalAmount + 2500*cart.cartTotalQuantity + 3500*cart.cartTotalQuantity} VNĐ</p>
+                  <p className={cx("payment__item-total")}>{formatNumberWithSeparator(cart.cartTotalAmount + 2500*cart.cartTotalQuantity + 3500*cart.cartTotalQuantity)} VNĐ</p>
                 </div>
                 <div className={cx("payment__item")}>
                   <p className={cx("payment__item-title")}>Nội dung chuyển khoản:</p>

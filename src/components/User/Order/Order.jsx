@@ -18,7 +18,7 @@ const Order = () => {
               </div>
               <div className={cx("order__item-gr")}>
                 <p className={cx("order__item-gr--name")}>{cartFood?.name}</p>
-                <p className={cx("order__item-gr--price")}>{formatNumberWithSeparator((cartFood?.price), " ")} VNĐ</p>
+                <p className={cx("order__item-gr--price")}>{formatNumberWithSeparator(cartFood?.price)} VNĐ</p>
                 <p className={cx("order__item-gr--category")}>
                   <span>Loại: </span>
                   {cartFood?.category}
@@ -32,7 +32,7 @@ const Order = () => {
             <div className={cx("order__right")}>
               <p className={cx("order__item-total")}>
                 <span>Tổng Bonsai: </span>
-                {formatNumberWithSeparator((cartFood?.price*cartFood?.cartQuantity), " ")} VNĐ
+                {formatNumberWithSeparator(cartFood?.price*cartFood?.cartQuantity)} VNĐ
               </p>
             </div>
           </div>
