@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
 import Comment from "../../../components/Comment/Comment";
-import formatNumberWithSeparator from "../../../constants";
+import formatNumberWithSeparator, { ACCESS_TOKEN } from "../../../constants";
 
 const BonsaiDetail = () => {
     const cx = classNames.bind(styles);
@@ -23,14 +23,18 @@ const BonsaiDetail = () => {
     }
 
     const fetchBonsaiDetail = async () => {
-      dispatch(getBonsaiDetail({
-        id
-      }))
+      const accessToken = localStorage.getItem(ACCESS_TOKEN);
+      if (accessToken && id) {
+        dispatch(getBonsaiDetail({
+          accessToken,
+          id
+        }))
+      }
     }
 
     useEffect(() => {
       fetchBonsaiDetail()
-    }, [id])
+    }, [localStorage.getItem(ACCESS_TOKEN), id])
 
     return bonsai ? ( 
       <>

@@ -14,9 +14,9 @@ export const getBonsais = createAsyncThunk('bonsais/getBonsais', async () => {
     }
 })
 
-export const getBonsaiDetail = createAsyncThunk('bonsais/getBonsaiDetail', async ({id}) => {
+export const getBonsaiDetail = createAsyncThunk('bonsais/getBonsaiDetail', async ({accessToken, id}) => {
     try {
-        const { data } = await createApi().get(`/bonsais/shopping/${id}`)
+        const { data } = await createApi(accessToken).get(`/bonsais/shopping/${id}`)
         return data.data
     } catch (error) {
         notification[NOTIFICATION_TYPES.error]({
