@@ -16,7 +16,7 @@ const Bill = () => {
     }
 
     function formatNumberWithSeparator(num, separator = ',') {
-        const numStr = num;
+        const numStr = num.toString();
         const parts = numStr.split('.');
         const integerPart = parts[0];
         const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
