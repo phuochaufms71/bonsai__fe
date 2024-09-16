@@ -6,7 +6,7 @@ export const NOTIFICATION_TYPES = {
 export const ACCESS_TOKEN = 'access_token';
 
 function formatNumberWithSeparator(num) {
-    return num.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }
 
 // function formatNumber(number) {
