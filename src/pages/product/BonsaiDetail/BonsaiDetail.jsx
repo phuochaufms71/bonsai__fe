@@ -32,7 +32,7 @@ const BonsaiDetail = () => {
       fetchBonsaiDetail()
     }, [id])
 
-    return Object.keys(bonsai) !== 0 ? ( 
+    return bonsai ? ( 
       <>
         <section className={cx('bonsai-detail')}>
           <div className={cx("container")}>
