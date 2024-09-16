@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 import styles from "./Bill.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getOrders } from "../../redux/order/orderSlice";
-import { ACCESS_TOKEN } from "../../constants";
+import formatNumberWithSeparator, { ACCESS_TOKEN } from "../../constants";
 import { useEffect } from "react";
 
 const Bill = () => {
@@ -13,10 +13,6 @@ const Bill = () => {
     const accessToken = localStorage.getItem(ACCESS_TOKEN);
     const fetchOrder = async () => {
         await dispatch(getOrders(accessToken))
-    }
-
-    function formatNumberWithSeparator(num) {
-        return num.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     }
 
     useEffect(() => {
