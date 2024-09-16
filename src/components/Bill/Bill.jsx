@@ -16,10 +16,10 @@ const Bill = () => {
     }
 
     function formatNumberWithSeparator(num, separator = ',') {
-        const numStr = num.toString();
-        const parts = numStr.split('.');
+        const numStr = num;
+        const parts = numStr.split(' ');
         const integerPart = parts[0];
-        const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
+        const decimalPart = parts.length > 1 ? ' ' + parts[1] : '';
         
         // Thay đổi dấu phân cách cho phần nguyên
         const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
