@@ -36,7 +36,7 @@ const BonsaiDetail = () => {
       fetchBonsaiDetail()
     }, [localStorage.getItem(ACCESS_TOKEN), id])
 
-    return bonsai ? ( 
+    return Object.keys(bonsai).length !== 0 ? ( 
       <>
         <section className={cx('bonsai-detail')}>
           <div className={cx("container")}>
