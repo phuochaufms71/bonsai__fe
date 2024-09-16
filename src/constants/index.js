@@ -7,7 +7,7 @@ export const ACCESS_TOKEN = 'access_token';
 
 function formatNumberWithSeparator(num, separator = ',') {
     const numStr = num;
-    const parts = numStr.split('');
+    const parts = numStr.split('.');
     const integerPart = parts[0];
     const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
     
