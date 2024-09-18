@@ -49,22 +49,6 @@ a, button, input, select, textarea {
     }
 }
 
-.content {
-    width: calc(100% - 300px);
-
-    @include abtracts.breakpoint(xl) {
-        width: calc(100% - 250px);
-    }
-
-    @include abtracts.breakpoint(lg) {
-        width: calc(100% - 200px);
-    }
-
-    @include abtracts.breakpoint(md) {
-        width: 100%;
-    }
-
-}
 
 //custom scrollbar
 /* width */

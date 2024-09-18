@@ -12,7 +12,7 @@ import facebook from "./facebook.png";
 import messenger from "./messenger.png";
 import zalo from "./zalo.jpg";
 import bonsai_icon from "./bonsai_icon.png";
-import banner_admin from "./banner-admin.jpg";
+import banner_dashboard from "./banner-admin.jpg";
 import bg_footer from "./bg-footer.jpg";
 import check_icon from "./check-mark.png";
 import delivery_icon from "./fast-delivery.png";
@@ -54,6 +54,11 @@ import blog_img_2 from "./chon_cay_phu_hop.jfif";
 import blog_img_3 from "./meo_cham_soc_bonsai.jfif";
 import blog_img_4 from "./tao_hinh_bonsai.jfif";
 import blog_img_5 from "./triet_ly_bonsai.jfif";
+import user_nav from "./user_nav.png";
+import book from "./book.png";
+import web from "./web.png";
+import community from "./viral-marketing.png";
+import youtube from "./youtube.png";
 
 export const images = {
     logo_bonsai,
@@ -70,7 +75,7 @@ export const images = {
     messenger,
     zalo,
     bonsai_icon,
-    banner_admin,
+    banner_dashboard,
     bg_footer,
     check_icon,
     delivery_icon,
@@ -112,4 +117,9 @@ export const images = {
     blog_img_3,
     blog_img_4,
     blog_img_5,
+    user_nav,
+    book,
+    web,
+    community,
+    youtube
 }

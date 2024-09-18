@@ -6,7 +6,7 @@
 
     &__title {
         font-family: "Merienda";
-        color: $fourary-color;
+        color: $primary-color;
         font-size: 3rem;
         font-weight: 800;
         text-align: center;
@@ -130,6 +130,7 @@
 
         @include abtracts.breakpoint(sm) {
             margin-top: 20px;
+            gap: 20px;
         }
     }
 
@@ -144,7 +145,8 @@
         cursor: pointer;
 
         @include abtracts.breakpoint(sm) {
-            min-width: 100px;
+            padding: 8px;
+            min-width: 60px;
         }
     }
 
@@ -159,7 +161,8 @@
         cursor: pointer;
 
         @include abtracts.breakpoint(sm) {
-            min-width: 100px;
+            padding: 8px;
+            min-width: 60px;
         }
     }
 

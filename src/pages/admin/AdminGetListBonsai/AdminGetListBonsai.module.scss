@@ -27,7 +27,7 @@
     &__title {
         text-align: center;
         margin: 20px 0;
-        color: $secondary-color;
+        color: $primary-color;
         font-family: "Merienda";
         font-size: 3rem;
         font-weight: 800;
@@ -44,13 +44,13 @@
 
     &__th {
         padding: 8px;
-        text-align: left;
+        text-align: center;
         border-bottom: 1px solid #DDD;
     }
 
     &__td {
         padding: 8px;
-        text-align: left;
+        text-align: center;
         border-bottom: 1px solid #DDD;
     }
 
@@ -61,6 +61,7 @@
         display: block;
         border-radius: 50%;
         border: 2px solid $primary-color;
+        margin: 0 auto;
     }
 
     &__wrap {
@@ -99,6 +100,7 @@
         object-fit: cover;
         display: block;
         cursor: pointer;
+        margin: 0 auto;
     }
 
     &__action {
@@ -128,12 +130,12 @@
     &__head {
         display: flex;
         align-items: center;
-        // gap: 40px;
         background-color: $fourary-color;
     }
 
     &__th {
         width: 25%;
+        text-align: center;
         padding: 10px 0;
         color: #fff;
 
@@ -141,7 +143,7 @@
 
     &__td {
         padding: 8px 0;
-        width: 18%;
+        width: 25%;
         text-align: center;
     }
 
@@ -152,7 +154,10 @@
         object-fit: cover;
         display: block;
         border: 1px solid $fourary-color;
+        margin: 0 auto;
     }
+
+    
 
     &__more {
         width: 15px;
@@ -160,10 +165,12 @@
         object-fit: cover;
         display: block;
         cursor: pointer;
+        margin-left: auto;
     }
 
     &__name {
-        width: 100px;
+        width: 25%;
+        text-align: center;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -173,11 +180,10 @@
         display: flex;
         align-items: center;
         border-bottom: 1px solid #e6e6e6;
-        gap: 20px;
     }
 
     &__list {
-        background-color: $primary-color;
+        background-color: #e6e6e6;
         padding: 5px;
     }
 
@@ -187,20 +193,21 @@
         color: #333;
 
         span {
-            font-weight: 500;
-            color: $secondary-color;
+            min-width: 50px;
+            font-weight: 400;
+            color: #333;
         }
     }
 
     &__action {
         position: absolute;
-        top: 0;
+        top: 100%;
         right: 0;
         background-color: #fff;
-        border-radius: 10px;
+        border-radius: 4px;
         box-shadow: 0 10px 45px rgba(0, 0, 0, 0.5);
         z-index: 99;
-        min-width: 100px;
+        min-width: 120px;
     }
 
     &__item {
@@ -210,6 +217,10 @@
         padding: 10px;
         font-weight: 500;
         cursor: pointer;
+
+        &:hover {
+            background-color: #e6e6e6;
+        }
 
         &-img {
             width: 20px;
@@ -224,6 +235,10 @@
     color: $fourary-color;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.get_list_bonsai__wrap {
+    margin: 0 auto;
 }
 
 .showBonsai {

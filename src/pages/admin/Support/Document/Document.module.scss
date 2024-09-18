@@ -1,0 +1,113 @@
+@use "../../../../components/scss/abtracts";
+@import "../../../../components/Common/Common.module.scss";
+
+.document {
+    margin: 30px 0;
+
+    &__title {
+        color: $fourary-color;
+        font-size: 3rem;
+        font-weight: 800;
+        text-align: center;
+        font-family: "Merienda";
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 2.6rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        min-width: 190px;
+        border-radius: 4px;
+        transition: all 0.3s linear;
+
+        &:hover {
+            scale: 1.1;
+        }
+
+        &:first-child {
+            border: 1px solid $primary-color;
+        }
+
+        &:nth-child(2) {
+            border: 1px solid $thusary-color;
+        }
+
+        &:nth-child(3) {
+            border: 1px solid $secondary-color;
+        }
+
+        &:last-child {
+            border: 1px solid $fourary-color;
+        }
+        
+        &:first-child:hover {
+            box-shadow: 0 5px 50px $primary-color;
+        }
+
+        &:nth-child(2):hover {
+            box-shadow: 0 5px 50px $thusary-color;
+        }
+
+        &:nth-child(3):hover {
+            box-shadow: 0 5px 50px $secondary-color;
+        }
+
+        &:last-child:hover {
+            box-shadow: 0 5px 50px $fourary-color;
+        }
+
+
+        img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            display: block;
+
+            @include abtracts.breakpoint(md) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1.8rem;
+            font-weight: 500;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &__spacer {
+        width: 80%;
+        height: 1.5px;
+        background-color: #e6e6e6;
+        margin: 30px auto 0;
+    }
+
+    &__desc {
+        margin-top: 30px;
+        color: #333;
+        text-align: center;
+        line-height: 1.6;
+    }
+}

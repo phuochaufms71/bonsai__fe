@@ -3,9 +3,9 @@ import { notification } from "antd";
 import { NOTIFICATION_TYPES } from "../../constants";
 import createApi from "../../api";
 
-export const getBonsais = createAsyncThunk('bonsais/getBonsais', async () => {
+export const getBonsais = createAsyncThunk('bonsais/getBonsais', async (accessToken) => {
     try {
-        const { data } = await createApi().get('/bonsais/admin-bonsai/lists');
+        const { data } = await createApi(accessToken).get('/bonsais/manage/bonsai/lists');
         return data.data
     } catch (error) {
         notification[NOTIFICATION_TYPES.error]({
@@ -25,9 +25,9 @@ export const getBonsaiDetail = createAsyncThunk('bonsais/getBonsaiDetail', async
     }
 })
 
-export const createBonsai = createAsyncThunk('bonsais/createBonsai', async ({newBonsai}) => {
+export const createBonsai = createAsyncThunk('bonsais/createBonsai', async ({accessToken, newBonsai}) => {
     try {
-        await createApi().post('/bonsais/admin-bonsai/create', {...newBonsai})
+        await createApi(accessToken).post('/bonsais/manage/bonsai/create', {...newBonsai})
         notification[NOTIFICATION_TYPES.success]({
             message: "Tạo bonsai thành công"
         })
@@ -38,9 +38,9 @@ export const createBonsai = createAsyncThunk('bonsais/createBonsai', async ({new
     }
 })
 
-export const updateBonsai = createAsyncThunk('bonsais/updateBonsai', async ({id, updateData}) => {
+export const updateBonsai = createAsyncThunk('bonsais/updateBonsai', async ({accessToken, id, updateData}) => {
     try {
-        await createApi().put(`/bonsais/admin-bonsai/lists/${id}`, {...updateData})
+        await createApi(accessToken).put(`/bonsais/manage/bonsai/lists/${id}`, {...updateData})
         notification[NOTIFICATION_TYPES.success]({
             message: "Chỉnh sửa bonsai thành công"
         })
@@ -51,9 +51,9 @@ export const updateBonsai = createAsyncThunk('bonsais/updateBonsai', async ({id,
     }
 })
 
-export const deleteBonsai = createAsyncThunk('bonsais/deleteBonsai', async ({id}) => {
+export const deleteBonsai = createAsyncThunk('bonsais/deleteBonsai', async ({accessToken, id}) => {
     try {
-        await createApi().delete(`/bonsais/admin-bonsai/lists/${id}`)
+        await createApi(accessToken).delete(`/bonsais/manage/bonsai/lists/${id}`)
         notification[NOTIFICATION_TYPES.success]({
             message: "Xóa bonsai thành công"
         })

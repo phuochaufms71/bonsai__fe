@@ -1,0 +1,118 @@
+@use "../scss/abtracts";
+@import "../Common/Common.module.scss";
+
+.youtube {
+    margin: 50px 0;
+
+    &__title {
+        color: $fourary-color;
+        font-size: 3rem;
+        font-family: "Merienda";
+        font-weight: 800;
+        text-align: center;
+    }
+
+    &__list {
+        margin-top: 20px;
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    &__item {
+        border: 1px solid $fourary-color;
+        padding: 10px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+
+        @include abtracts.breakpoint(lg) {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &-wrap {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        &-name {
+            color: $fourary-color;
+            font-weight: 500;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+
+            @include abtracts.breakpoint(sm) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        &-info {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        &-gr {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-weight: 500;
+
+            
+            span {
+                color: #333;
+                font-size: 1.6rem;
+                word-break: break-all;
+                line-height: 1.6;
+
+                @include abtracts.breakpoint(sm) {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        &-icon {
+            font-size: 2rem;
+            color: $fourary-color;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &-desc {
+            margin-top: 20px;
+            color: #333;
+
+            @include abtracts.breakpoint(sm) {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        iframe {
+            width: 500px;
+            height: 250px;
+
+            @include abtracts.breakpoint(sm) {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    }
+
+}

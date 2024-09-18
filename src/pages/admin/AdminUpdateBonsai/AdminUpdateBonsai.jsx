@@ -10,13 +10,15 @@ import { getBonsais, updateBonsai } from "../../../redux/bonsai/bonsaiSlice.js";
 const AdminUpdateFood = ({selectedBonsai, setIdSelectedBonsai, setIsUpdateBonsai, setShowAction}) => {
   const cx = classNames.bind(styles);
   const dispatch = useDispatch();
-  
   const [name, setName] = useState(selectedBonsai?.name || "");
   const [category, setCategory] = useState( selectedBonsai?.category || "");
+  const [code, setCode] = useState(selectedBonsai?.code || "");
   const [price, setPrice] = useState(selectedBonsai?.price || "");
   const [image, setImage] = useState(selectedBonsai?.image.secure_url || "");
-  const [rate, setRate] = useState(selectedBonsai?.rate || "");
   const [description, setDescription] = useState(selectedBonsai?.description || "");
+  const [chieuCao, setChieuCao] = useState(selectedBonsai?.chieuCao || "");
+  const [hoanhDe, setHoanhDe] = useState(selectedBonsai?.hoanhDe || "");
+  const [hoanhThan, setHoanhThan] = useState(selectedBonsai?.hoanhThan || "");
 
   const handleChangeImage = (e) => {
     const file = e.target.files[0];
@@ -42,7 +44,10 @@ const AdminUpdateFood = ({selectedBonsai, setIdSelectedBonsai, setIsUpdateBonsai
         category,
         price,
         image,
-        rate,
+        code,
+        chieuCao,
+        hoanhDe,
+        hoanhThan,
         description
       }
     }))
@@ -53,54 +58,71 @@ const AdminUpdateFood = ({selectedBonsai, setIdSelectedBonsai, setIsUpdateBonsai
     setCategory("")
     setImage("")
     setPrice("")
-    setRate("")
     setDescription("")
+    setChieuCao("")
+    setHoanhDe("")
+    setCode("")
+    setHoanhThan("")
     setShowAction(false)
   }
 
   return (
     <div className={cx("create-food")}>
-        <h3 className={cx("create-food__title")}>Update A Food</h3>
+        <h3 className={cx("create-food__title")}>Chỉnh sửa bonsai</h3>
         <form onSubmit={handleSubmitFormUpdateBonsai} className={cx("create-food__form")}>
           <div className={cx("create-food__form-block")}>
             <div className={cx("create-food__form-group")}>
-              <label className={cx("create-food__label")} htmlFor="nameFood">Name</label>
-              <input className={cx("create-food__input")} type="text" value={name} onChange={(e) => setName(e.target.value)} id="nameFood"/>
+              <label className={cx("create-food__label")} htmlFor="name">Tên bonsai</label>
+              <input className={cx("create-food__input")} type="text" value={name} onChange={(e) => setName(e.target.value)} id="name"/>
+            </div>
+            <div className={cx("create-food__form-group")}>
+              <label className={cx("create-food__label")} htmlFor="code">Mã số</label>
+              <input className={cx("create-food__input")} type="text" value={code} onChange={(e) => setCode(e.target.value)} id="code"/>
             </div>
           </div>
           <div className={cx("create-food__form-block")}>
             <div className={cx("create-food__form-group")}>
-              <label className={cx("create-food__label")} htmlFor="categoryFood">Category</label>
-              <input className={cx("create-food__input")} type="text" value={category} onChange={(e) => setCategory(e.target.value)} id="categoryFood"/>
+              <label className={cx("create-food__label")} htmlFor="category">Loại</label>
+              <input className={cx("create-food__input")} type="text" value={category} onChange={(e) => setCategory(e.target.value)} id="category"/>
             </div>
             <div className={cx("create-food__form-group")}>
-              <label className={cx("create-food__label")} htmlFor="priceFood">Price</label>
-              <input className={cx("create-food__input")} type="text" value={price} onChange={(e) => setPrice(e.target.value)} id="priceFood"/>
+              <label className={cx("create-food__label")} htmlFor="price">Giá</label>
+              <input className={cx("create-food__input")} type="text" value={price} onChange={(e) => setPrice(e.target.value)} id="price"/>
             </div>
           </div>
           <div className={cx("create-food__form-block")}>
-          <div className={cx("create-food__form-group")}>
+            <div className={cx("create-food__form-group")}>
               <label className={cx("create-food__label")}>
                 <img className={cx("create-food__img")} src={image} alt="" />
                 <input id="image" className={cx("create-food__input")} type="file" onChange={handleChangeImage} hidden/>
               </label>
             </div>
+          </div>
+          <div className={cx("create-food__form-block")}>
             <div className={cx("create-food__form-group")}>
-              <label className={cx("create-food__label")} htmlFor="rateFood">Rate</label>
-              <input className={cx("create-food__input")} type="text" value={rate} onChange={(e) => setRate(e.target.value)} id="rateFood"/>
+              <label className={cx("create-food__label")} htmlFor="chieuCao">Chiều cao</label>
+              <input className={cx("create-food__textarea")} value={chieuCao} onChange={(e) => setChieuCao(e.target.value)} id="chieuCao"/>
+            </div>
+            <div className={cx("create-food__form-group")}>
+              <label className={cx("create-food__label")} htmlFor="hoanhThan">Hoành thân</label>
+              <input className={cx("create-food__textarea")} value={hoanhThan} onChange={(e) => setHoanhThan(e.target.value)} id="hoanhThan"/>
+            </div>
+            <div className={cx("create-food__form-group")}>
+              <label className={cx("create-food__label")} htmlFor="hoanhDe">Hoành đế</label>
+              <input className={cx("create-food__textarea")} value={hoanhDe} onChange={(e) => setHoanhDe(e.target.value)} id="hoanhDe"/>
             </div>
           </div>
           <div className={cx("create-food__form-block")}>
             <div className={cx("create-food__form-group")}>
-              <label className={cx("create-food__label")} htmlFor="descFood">Description</label>
+              <label className={cx("create-food__label")} htmlFor="descFood">Mô tả</label>
               <textarea rows={6} className={cx("create-food__textarea")} value={description} onChange={(e) => setDescription(e.target.value)} id="descFood"/>
             </div>
           </div>
           <div className={cx("create-food__footer")}>
-            <p className={cx("create-food__note")}><span>Note:</span> Fill in the detailed name of your product. Then click the create button</p>
+            <p className={cx("create-food__note")}><span>Chú ý:</span> Điền đầy đủ thông tin bonsai. Sau đó, click vào nút chỉnh sửa</p>
             <div className={cx("create-food__wrap-btn")}>
-              <button onClick={() => setIsUpdateBonsai(false)}  className={cx("create-food__btn--cancel")}>Cancel</button>
-              <button type="submit" className={cx("create-food__btn--create")}>Update</button>
+              <button onClick={() => {setIsUpdateBonsai(false); setShowAction(false)}}  className={cx("create-food__btn--cancel")}>Hủy</button>
+              <button onClick={handleSubmitFormUpdateBonsai} className={cx("create-food__btn--create")}>Chỉnh sửa</button>
             </div>
           </div>
         </form>

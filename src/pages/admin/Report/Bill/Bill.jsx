@@ -2,8 +2,8 @@
 import classNames from "classnames/bind";
 import styles from "./Bill.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { getOrders } from "../../redux/order/orderSlice";
-import formatNumberWithSeparator, { ACCESS_TOKEN } from "../../constants";
+import { getOrders } from "../../../../redux/order/orderSlice";
+import formatNumberWithSeparator, { ACCESS_TOKEN } from "../../../../constants";
 import { useEffect } from "react";
 
 const Bill = () => {
@@ -41,12 +41,14 @@ const Bill = () => {
                                                 {
                                                     order?.bonsaiOrder?.cartBonsais?.map((cartOrder, index) => (
                                                         <div key={index} className={cx("bill__order-wrap")}>
-                                                            <img className={cx("bill__order-img")}src={cartOrder?.image?.secure_url} alt="" />
-                                                            <div className={cx("bill__order-detail")}>
-                                                                <p className={cx("bill__order-name")}><span>Tên:</span> {cartOrder?.name}</p>
-                                                                <p className={cx("bill__order-code")}><span>Mã số:</span> {cartOrder?.code}</p>
-                                                                <p className={cx("bill__order-price")}><span>Giá:</span> {formatNumberWithSeparator(cartOrder?.price)} VNĐ</p>
-                                                                <p className={cx("bill__order-quantity")}><span>Số lượng:</span> {cartOrder?.cartQuantity}</p>
+                                                            <div className={cx("bill__order-bonsai")}>
+                                                                <img className={cx("bill__order-img")}src={cartOrder?.image?.secure_url} alt="" />
+                                                                <div className={cx("bill__order-detail")}>
+                                                                    <p className={cx("bill__order-name")}><span>Tên:</span> {cartOrder?.name}</p>
+                                                                    <p className={cx("bill__order-code")}><span>Mã số:</span> {cartOrder?.code}</p>
+                                                                    <p className={cx("bill__order-price")}><span>Giá:</span> {formatNumberWithSeparator(cartOrder?.price)} VNĐ</p>
+                                                                    <p className={cx("bill__order-quantity")}><span>Số lượng:</span> {cartOrder?.cartQuantity}</p>
+                                                                </div>
                                                             </div>
                                                             <p className={cx("bill__order-total-item")}>
                                                                 <span>Tổng:</span> {formatNumberWithSeparator(cartOrder?.cartQuantity * cartOrder?.price)} VNĐ

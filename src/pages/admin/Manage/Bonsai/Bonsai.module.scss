@@ -1,0 +1,79 @@
+@use "../../../../components/scss/abtracts";
+@import "../../../../components/Common/Common.module.scss";
+
+.bonsai {
+
+    &__inner {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__title {
+        border-radius: 4px;
+        color: $fourary-color;
+        font-size: 2.6rem;
+        font-weight: 500;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    &__wrap-img {
+        display: flex;
+        align-items: flex-end;
+        gap: 5px;
+        justify-content: center;
+    }
+
+    &__img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__action {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        
+        @include abtracts.breakpoint(sm) {
+            flex-direction: column;
+        }
+
+        &Link {
+            border: 1px solid $fourary-color;
+            padding: 10px;
+            color: $fourary-color;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            min-width: 175px;
+
+            img {
+                width: 20px;
+                height: 20px;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+}
+
+.active {
+    background: $fourary-color;
+    color: #fff;
+}
+
+.spacer {
+    width: 80%;
+    height: 2px;
+    background-color: #e6e6e6;
+    margin: 10px auto;
+}

@@ -3,9 +3,9 @@ import createApi from "../../api"
 import { notification } from "antd"
 import { NOTIFICATION_TYPES } from "../../constants";
 
-export const getMessages = createAsyncThunk('message/getMessages', async () => {
+export const getMessages = createAsyncThunk('message/getMessages', async (accessToken) => {
     try {
-        const { data } = await createApi().get('/message/lists');
+        const { data } = await createApi(accessToken).get('/message/lists');
         return data.data
     } catch (error) {
         notification[NOTIFICATION_TYPES.error]({
@@ -14,11 +14,11 @@ export const getMessages = createAsyncThunk('message/getMessages', async () => {
     }
 })
 
-export const createMessage = createAsyncThunk('message/createMessage', async ({newMessage}) => {
+export const createMessage = createAsyncThunk('message/createMessage', async ({accessToken, newMessage}) => {
     try {
-        await createApi().post('/message/create', {...newMessage})
+        await createApi(accessToken).post('/message/create', {...newMessage})
         notification[NOTIFICATION_TYPES.success]({
-            message: "Send message successfully"
+            message: "Gửi vấn đề thành công"
         })
     } catch (error) {
         notification[NOTIFICATION_TYPES.error]({

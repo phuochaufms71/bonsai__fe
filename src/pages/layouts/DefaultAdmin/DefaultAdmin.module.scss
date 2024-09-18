@@ -1,13 +1,1 @@
 @use "../../../components/scss/abtracts";
-
-.default-admin {
-    display: flex;
-
-    @include abtracts.breakpoint(xl) {
-        justify-content: space-between;
-    }
-
-    @include abtracts.breakpoint(md) {
-        flex-direction: column;
-    }
-}

@@ -6,7 +6,7 @@ import {
   deleteBonsai,
   getBonsais
 } from "../../../redux/bonsai/bonsaiSlice";
-import { ACCESS_TOKEN } from "../../../constants";
+import formatNumberWithSeparator, { ACCESS_TOKEN } from "../../../constants";
 import { useEffect, useMemo, useState } from "react";
 import { images } from "../../../components/images";
 import ModalDelete from "../../../components/Modal/ModalDelete/ModalDelete";
@@ -62,18 +62,18 @@ const AdminGetListBonsai = () => {
         />
       )}
       {
-        bonsais.length === 0 ? <div className={cx("get-list-bonsai__empty")}>bonsai list is empty, <span>create bonsai now</span></div> : <div className={cx("get_list_bonsai")}>
+        bonsais.length === 0 ? <div className={cx("get-list-bonsai__empty")}>Danh sách bonsai trống, <span>tạo bonsai ngay</span></div> : <div className={cx("get_list_bonsai")}>
           <div className={cx("container")}>
             <div className={cx("get_list_bonsai__inner")}>
-              <h2 className={cx("get_list_bonsai__title")}>List bonsais</h2>
+              <h2 className={cx("get_list_bonsai__title")}>Danh sách bonsai</h2>
               <table className={cx("get_list_bonsai__table")}>
                 <thead>
                   <tr className={cx("get_list_bonsai__head")}>
-                    <th className={cx("get_list_bonsai__th")}>Image</th>
-                    <th className={cx("get_list_bonsai__th")}>Name</th>
-                    <th className={cx("get_list_bonsai__th")}>Catogory</th>
-                    <th className={cx("get_list_bonsai__th")}>Price</th>
-                    <th className={cx("get_list_bonsai__th")}>Action</th>
+                    <th className={cx("get_list_bonsai__th")}>Ảnh</th>
+                    <th className={cx("get_list_bonsai__th")}>Tên</th>
+                    <th className={cx("get_list_bonsai__th")}>Loại</th>
+                    <th className={cx("get_list_bonsai__th")}>Giá</th>
+                    <th className={cx("get_list_bonsai__th")}>Thao tác</th>
                   </tr>
                 </thead>
 
@@ -92,13 +92,13 @@ const AdminGetListBonsai = () => {
                         <td className={cx("get_list_bonsai__td")}>
                           {bonsai?.category}
                         </td>
-                        <td className={cx("get_list_bonsai__td")}>{bonsai?.price} VND</td>
+                        <td className={cx("get_list_bonsai__td")}>{formatNumberWithSeparator(bonsai?.price)} VND</td>
                         <td className={cx("get_list_bonsai__td")}>
                           <div className={cx("get_list_bonsai__wrap")}>
                             <img
                               onClick={() => {
                                 setId(bonsai?._id);
-                                setShowAction(true);
+                                setShowAction(prev => !prev);
                               }}
                               className={cx("get_list_bonsai__more")}
                               src={images.three_dots_icon}
@@ -118,7 +118,7 @@ const AdminGetListBonsai = () => {
                                     src={images.edit_icon}
                                     alt="edit icon"
                                   />
-                                  Update
+                                  Chỉnh sửa
                                 </div>
                                 <div
                                   onClick={() => {
@@ -131,7 +131,7 @@ const AdminGetListBonsai = () => {
                                     src={images.delete_icon}
                                     alt="delete icon"
                                   />
-                                  Delete
+                                  Xóa
                                 </div>
                                 {showModalDelete && (
                                   <ModalDelete
@@ -160,9 +160,9 @@ const AdminGetListBonsai = () => {
         <div className={cx("get-list-bonsai-mobie__wrap")}>
           <div className={cx("get-list-bonsai-mobie__head")}>
             <span className={cx("get-list-bonsai-mobie__th")}></span>
-            <span className={cx("get-list-bonsai-mobie__th")}>Image</span>
-            <span className={cx("get-list-bonsai-mobie__th")}>Name</span>
-            <span className={cx("get-list-bonsai-mobie__th")}>Action</span>
+            <span className={cx("get-list-bonsai-mobie__th")}>Ảnh</span>
+            <span className={cx("get-list-bonsai-mobie__th")}>Tên</span>
+            <span className={cx("get-list-bonsai-mobie__th")}>Thao tác</span>
           </div>
 
           {bonsais?.map((bonsai, index) => (
@@ -183,7 +183,7 @@ const AdminGetListBonsai = () => {
                 <div className={cx("get-list-bonsai-mobie__td")}>
                   <img
                     className={cx("get-list-bonsai-mobie__img")}
-                    src={bonsai?.image}
+                    src={bonsai?.image?.secure_url}
                     alt=""
                   />
                 </div>
@@ -194,7 +194,7 @@ const AdminGetListBonsai = () => {
                       <img
                         onClick={() => {
                           setId(bonsai?._id);
-                          setShowAction(true);
+                          setShowAction(prev => !prev);
                         }}
                         className={cx("get-list-bonsai-mobie__more")}
                         src={images.three_dots_icon}
@@ -215,7 +215,7 @@ const AdminGetListBonsai = () => {
                             src={images.edit_icon}
                             alt="edit icon"
                           />
-                          Update
+                          Chỉnh sửa
                         </div>
                         <div
                           onClick={() => {
@@ -228,7 +228,7 @@ const AdminGetListBonsai = () => {
                             src={images.delete_icon}
                             alt="delete icon"
                           />
-                          Delete
+                          Xóa
                         </div>
                         {showModalDelete && (
                           <ModalDelete
@@ -246,10 +246,9 @@ const AdminGetListBonsai = () => {
               {showDetailBonsai && id === bonsai?._id && (
                 <div className={cx("get-list-bonsai-mobie__list")}>
                   <p className={cx("get-list-bonsai-mobie__item")}>
-                    <span>Name:</span> {bonsai?.name}</p>
-                  <p className={cx("get-list-bonsai-mobie__item")}><span>Category:</span> {bonsai?.category}</p>
-                  <p className={cx("get-list-bonsai-mobie__item")}><span>Price:</span> {bonsai?.price}</p>
-                  <p className={cx("get-list-bonsai-mobie__item")}><span>Rate:</span> {bonsai?.rate}</p>
+                    <span>Tên:</span> {bonsai?.name}</p>
+                  <p className={cx("get-list-bonsai-mobie__item")}><span>Loại:</span> {bonsai?.category}</p>
+                  <p className={cx("get-list-bonsai-mobie__item")}><span>Giá:</span> {formatNumberWithSeparator(bonsai?.price)} VNĐ</p>
                 </div>
               )}
             </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import classNames from "classnames/bind";
 import styles from "./AdminCreateBonsai.module.scss";
@@ -7,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { createBonsai } from "../../../redux/bonsai/bonsaiSlice.js";
 import { images } from "../../../components/images/index.js";
 
-const AdminCreateBonsai = () => {
+const AdminCreateBonsai = ({ setIsShowCreate }) => {
   const cx = classNames.bind(styles);
   const dispatch = useDispatch();
 
@@ -123,7 +124,7 @@ const AdminCreateBonsai = () => {
           <div className={cx("create-bonsai__footer")}>
             <p className={cx("create-bonsai__note")}><span>Chú ý:</span> Điền giá trị vào các trường. Sau đó, nhấn vào nút "Tạo"</p>
             <div className={cx("create-bonsai__wrap-btn")}>
-              <button className={cx("create-bonsai__btn--cancel")}>Hủy</button>
+              <button onClick={() => setIsShowCreate(false)} className={cx("create-bonsai__btn--cancel")}>Hủy</button>
               <button type="submit" className={cx("create-bonsai__btn--create")}>Tạo</button>
             </div>
           </div>

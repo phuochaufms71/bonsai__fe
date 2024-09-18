@@ -1,0 +1,174 @@
+@use "../scss/abtracts";
+@import "../Common/Common.module.scss";
+
+.book {
+    margin: 50px 0;
+
+    &__title {
+        color: $primary-color;
+        font-size: 3rem;
+        font-weight: 800;
+        font-family: "Merienda";
+        text-align: center;
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 2.6rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2rem;
+        }
+    }
+
+    &__list {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        gap: 20px;
+        border: 1px solid $primary-color;
+        border-radius: 4px;
+        padding: 20px;
+
+        @include abtracts.breakpoint(md) {
+            flex-direction: column;
+        }
+
+        &-left {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+
+            @include abtracts.breakpoint(md) {
+                align-items: center;
+            }
+        }
+
+
+        &-img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            border: 1px solid #e6e6e6;
+
+            @include abtracts.breakpoint(md) {
+                width: 150px;
+            }
+        }
+
+        &-author {
+            margin-top: 10px;
+
+            p:last-child {
+                margin-top: 10px;
+            }
+            
+            p {
+                font-size: 1.7rem;
+                color: #333;
+
+                @include abtracts.breakpoint(md) {
+                    font-size: 1.6rem;
+                }
+
+                span {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            @include abtracts.breakpoint(md) {
+                align-items: center;
+            }
+        }
+
+        &-name {
+            color: $fourary-color;
+            font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 1.6;
+
+            @include abtracts.breakpoint(md) {
+                text-align: center;
+                font-size: 1.6rem;
+            }
+        }
+
+        &-price {
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #333;
+
+            @include abtracts.breakpoint(md) {
+                font-size: 1.5rem;
+            }
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            @include abtracts.breakpoint(md) {
+                flex-direction: column;
+            }
+
+            p {
+                span {
+                    font-weight: 500;
+                }
+
+                @include abtracts.breakpoint(md) {
+                    font-size: 1.5rem;
+                }
+            }
+
+        }
+
+        &-content {
+            p {
+                font-size: 1.7rem;
+
+                @include abtracts.breakpoint(md) {
+                    font-size: 1.6rem;
+                }
+            }
+
+            ul {
+                list-style-type:disc;
+                line-height: 1.6;
+                color: #333;
+
+                span {
+                    font-weight: 500;
+                }
+
+                li {
+                    margin-left: 40px;
+
+                    @include abtracts.breakpoint(md) {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        &-desc {
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+    }
+
+
+}

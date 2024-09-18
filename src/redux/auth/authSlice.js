@@ -88,7 +88,19 @@ export const editUser = createAsyncThunk('auth/editUser', async ({accessToken, e
     }
 })
 
+export const getUser = createAsyncThunk('auth/getUser', async (accessToken) => {
+    try {
+        const { data } = await createApi(accessToken).get('/auth/get-user')
+        return data.data
+    } catch (error) {
+        notification[NOTIFICATION_TYPES.error]({
+            message: error.response.data.message
+        })
+    }
+})
+
 const initialState = {
+    users: [],
     user: {}
 }
 
@@ -98,6 +110,9 @@ const authSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(login.fulfilled, (state, action) => {
             state.user = action.payload
+        })
+        builder.addCase(getUser.fulfilled, (state, action) => {
+            state.users = action.payload;
         })
         builder.addCase(logout.fulfilled, (state) => {
             state.user = {}

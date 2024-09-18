@@ -1,0 +1,138 @@
+@use "../../../../components/scss/abtracts";
+@import "../../../../components/Common/Common.module.scss";
+
+.user {
+    margin: 30px 0;
+
+    &__mobile {
+        display: none;
+
+        @include abtracts.breakpoint(md) {
+            display: block;
+        }
+    }
+
+    &__table {
+        @include abtracts.breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 3rem;
+        color: $fourary-color;
+        font-family: "Merienda";
+        font-weight: 800;
+
+        @include abtracts.breakpoint(lg) {
+            font-size: 2.6rem;
+        }
+
+        @include abtracts.breakpoint(md) {
+            font-size: 2rem;
+        }
+
+        @include abtracts.breakpoint(sm) {
+            font-size: 1.8rem;
+        }
+    }
+
+    th {
+        padding: 10px;
+    }
+
+    td {
+        img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid $fourary-color;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    &__item {
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+        display: flex;
+        padding: 10px;
+        gap: 20px;
+        align-items: center;
+
+        @include abtracts.breakpoint(sm) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        &-wrap {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid $fourary-color;
+        }
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &-name {
+            color: $thusary-color;
+
+            @include abtracts.breakpoint(sm) {
+                text-align: center;
+            }
+
+            span {
+                font-weight: 500;
+                color: #333;
+            }
+        }
+
+        &-phone {
+            color: $thusary-color;
+
+            @include abtracts.breakpoint(sm) {
+                text-align: center;
+            }
+
+            span {
+                font-weight: 500;
+                color: #333;
+            }
+        }
+
+        &-email {
+            color: $thusary-color;
+
+            @include abtracts.breakpoint(sm) {
+                text-align: center;
+            }
+
+            span {
+                font-weight: 500;
+                color: #333;
+            }
+        }
+    }
+}

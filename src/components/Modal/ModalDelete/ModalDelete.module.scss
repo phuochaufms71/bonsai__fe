@@ -27,7 +27,7 @@
     }
 
     &__title {
-        color: $secondary-color;
+        color: $fourary-color;
         text-align: center;
         font-size: 2.4rem;
         font-weight: 600;
@@ -71,9 +71,9 @@
     }
 
     &__btn-cancel {
-        border: 1px solid $secondary-color;
+        border: 1px solid $fourary-color;
         outline: none;
-        color: $secondary-color;
+        color: $fourary-color;
         font-weight: 500;
         font-size: 1.8rem;
         background-color: transparent;
@@ -98,7 +98,7 @@
         color: #fff;
         font-weight: 500;
         font-size: 1.8rem;
-        background-color: $secondary-color;
+        background-color: $fourary-color;
         padding: 10px;
         min-width: 100px;
         cursor: pointer;

@@ -6,6 +6,7 @@ import { routeAuthorization } from "./routes/index.js";
 import DefaultLayout from "./pages/layouts/DefaultLayout/DefaultLayout.jsx";
 import PageNotFound from "./pages/layouts/PageNotFound/PageNotFound";
 import DefaultAdmin from "./pages/layouts/DefaultAdmin/DefaultAdmin";
+import Dashboard from "./pages/admin/Dashboard/Dashboard.jsx";
 
 const App = () => {
   const user = useSelector(getLoggedInUser);
@@ -18,7 +19,7 @@ const App = () => {
               routePublic.map((routeLayout, index) => {
                 const Page = routeLayout.component;
                 const Layout = DefaultLayout;
-                const Admin = DefaultAdmin;
+                const Admin = Dashboard;
                 return (
                   <Route key={index}>
                     <Route index element={user.role === "admin" ? <Admin /> :<Layout>

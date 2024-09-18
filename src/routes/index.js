@@ -9,7 +9,6 @@ import Register from "../pages/user/Register/Register";
 import ResetPassword from "../pages/user/ResetPassword/ResetPassword";
 import Logout from "../pages/user/Logout/Logout";
 
-import Analytics from "../pages/admin/Analytics/Analytics";
 import AdminUpdateFood from "../pages/admin/AdminUpdateBonsai/AdminUpdateBonsai";
 import About from "../pages/layouts/About/About";
 import Cart from "../pages/layouts/Cart/Cart";
@@ -23,7 +22,13 @@ import Notification from "../pages/layouts/Notification/Notification";
 import AdminGetListBonsai from "../pages/admin/AdminGetListBonsai/AdminGetListBonsai";
 import AdminCreateBonsai from "../pages/admin/AdminCreateBonsai/AdminCreateBonsai";
 import BonsaiDetail from "../pages/product/BonsaiDetail/BonsaiDetail";
-import Bill from "../components/Bill/Bill";
+import User from "../pages/admin/Manage/User/User";
+import Bonsai from "../pages/admin/Manage/Bonsai/Bonsai";
+import FaqAdmin from "../pages/admin/Support/FaqAdmin/FaqAdmin";
+import Feedback from "../pages/admin/Support/Feedback/Feedback";
+import Document from "../pages/admin/Support/Document/Document";
+import Bill from "../pages/admin/Report/Bill/Bill";
+import Dashboard from "../pages/admin/Dashboard/Dashboard";
 
 export const routePublic = [
     { path: "/", component: Home },
@@ -50,9 +55,14 @@ export const routeAuthorization = [
 ];
 
 export const routeAdmin = [
-    { path: "/bill", component: Bill},
-    { path: "/analytics", component: Analytics},
-    { path: "/admin-bonsai/lists", component: AdminGetListBonsai },
-    { path: "/admin-bonsai/create", component: AdminCreateBonsai },
-    { path: "/admin-bonsai/lists/:id", component: AdminUpdateFood },
+    { path: "/", component: Dashboard},
+    { path: "/report/bill", component: Bill},
+    { path: "/manage/user", component: User},
+    { path: "/manage/bonsai", component: Bonsai},
+    { path: "/manage/bonsai/lists", component: AdminGetListBonsai },
+    { path: "/manage/bonsai/create", component: AdminCreateBonsai },
+    { path: "/manage/bonsai/lists/:id", component: AdminUpdateFood },
+    { path: "/support/faq", component: FaqAdmin },
+    { path: "/support/feedback", component: Feedback },
+    { path: "/support/document", component: Document },
 ]
