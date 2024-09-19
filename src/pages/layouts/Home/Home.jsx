@@ -28,7 +28,6 @@ const Home = () => {
             </div>
             <div className={cx("home__content--btn")}>
               <Link to="/about" className={cx("home__content--btn-order")}>Khám phá</Link>
-              <Link to="/book" className={cx("home__content--btn-book")}>Đặt hàng</Link>
             </div>
           </div>
 

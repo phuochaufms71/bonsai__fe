@@ -16,8 +16,10 @@
     padding: 15px;
     transition: 0.3s;
     width: 250px;
+    transition: all 0.3s linear;
 
     &:hover {
+        scale: 1.1;
         box-shadow: 0px 0px 50px 2px #e6e6e6;
     }
 

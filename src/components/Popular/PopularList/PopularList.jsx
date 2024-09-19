@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { addToCart } from "../../../redux/cart/cartSlice";
 import { ToastContainer } from "react-toastify";
 import Aos from "aos";
-import formatNumberWithSeparator from "../../../constants";
+import formatNumberWithSeparator, { ACCESS_TOKEN } from "../../../constants";
 import { addFavouriteBonsai } from "../../../redux/bonsai/favouriteBonsaiSlice";
 
 const PopularList = () => {
@@ -21,9 +21,10 @@ const PopularList = () => {
   const dispatch = useDispatch();
   const [favourite, setFavourite] = useState(false);
   const [idBonsai, setIdBonsai] = useState("");
+  const accessToken = localStorage.getItem(ACCESS_TOKEN);
 
   const fetchBonsais = async () => {
-    await dispatch(getBonsais());
+    await dispatch(getBonsais(accessToken));
   };
 
   const handleAddToCart = (bonsai) => {

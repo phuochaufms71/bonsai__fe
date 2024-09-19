@@ -14,7 +14,6 @@ import About from "../pages/layouts/About/About";
 import Cart from "../pages/layouts/Cart/Cart";
 import Shopping from "../pages/layouts/Shopping/Shopping"
 import Checkout from "../pages/layouts/Checkout/Checkout";
-import BookTable from "../pages/layouts/BookTable/BookTable";
 import Profile from "../pages/layouts/Profile/Profile";
 import Payment from "../pages/layouts/Payment/Payment";
 import Faq from "../pages/layouts/Faq/Faq";
@@ -32,7 +31,6 @@ import Dashboard from "../pages/admin/Dashboard/Dashboard";
 
 export const routePublic = [
     { path: "/", component: Home },
-    { path: "/book-table", component: BookTable },
     { path: "/shopping", component: Shopping },
     { path: "/shopping/:id", component: BonsaiDetail },
     { path: "/blog", component: Blog },

@@ -19,7 +19,7 @@ import delivery_icon from "./fast-delivery.png";
 import not_found_icon from "./icon_page_not_found.png";
 import rounded_rec_icon from "./rounded-rectangle.png";
 import more from "./more.png";
-import blog_icon from "./blog.png";
+
 import add_icon from "./add.png";
 import checklist_icon from "./checklist.png";
 import upload_img from "./upload_area.png";
@@ -32,7 +32,6 @@ import logout_icon from "./logout.png";
 import three_dots_icon from "./three-dots.png";
 import delete_icon from "./trash.png";
 import edit_icon from "./edit.png";
-import star_icon from "./star.png"; 
 import img_about_1 from "./img-about-1.jpg";
 import img_about_2 from "./img-about-2.jpg";
 import img_about_3 from "./img-about-3.jpg";
@@ -40,13 +39,7 @@ import dish_icon from "./dish_icon.png";
 import fresh_icon from "./fresh.png";
 import best_price_icon from "./best-price.png";
 import guarantee_icon from "./guarantee.png";
-import img_1 from "./img-1.jfif";
-import img_2 from "./img-2.jfif";
-import img_3 from "./img-3.jfif";
-import img_4 from "./img-4.jfif";
-import img_5 from "./img-5.jfif";
-import img_6 from "./img-6.jfif";
-import img_7 from "./img-7.jfif";
+
 import qr_sacombank from "./qr_sacombank.jpg";
 import logo_sacombank from "./logo_sacombank.png";
 import blog_img_1 from "./kham_pha_nghe_thuat_bonsai.jfif";
@@ -82,7 +75,6 @@ export const images = {
     not_found_icon,
     rounded_rec_icon,
     more,
-    blog_icon,
     add_icon,
     checklist_icon,
     upload_img,
@@ -95,7 +87,7 @@ export const images = {
     three_dots_icon,
     delete_icon,
     edit_icon,
-    star_icon,
+
     img_about_1,
     img_about_2,
     img_about_3,
@@ -103,13 +95,7 @@ export const images = {
     fresh_icon,
     best_price_icon,
     guarantee_icon,
-    img_1,
-    img_2,
-    img_3,
-    img_4,
-    img_5,
-    img_6,
-    img_7,
+
     qr_sacombank,
     logo_sacombank,
     blog_img_1,

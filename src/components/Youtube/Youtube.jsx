@@ -55,7 +55,6 @@ const Youtube = () => {
                                     </p>
                                 </div>
                             </div>
-                            <iframe src="https://www.youtube.com/embed/YxO22Kk5dS0?autoplay=1&mute=1" title="Welcome to Bonsai Mirai" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
 
                         <div className={cx("youtube__item")}>
@@ -100,7 +99,6 @@ const Youtube = () => {
                                     </p>
                                 </div>
                             </div>
-                            <iframe width="942" height="530" src="https://www.youtube.com/embed/rbahRQeSATo?autoplay=1&mute=1" title="20+ years old Ilex | The Bonsai Supply Logo Tree |" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
