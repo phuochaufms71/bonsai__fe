@@ -17,7 +17,7 @@ const Footer = () => {
                   <img className={cx("footer__top-social-img")}src={images.facebook} alt="" />
                 </a>
               </div>
-              <a href="https://www.facebook.com/messages/e2ee/t/25346475391617815?locale=vi_VN" target="_blank">
+              <a href="https://www.facebook.com/messages/e2ee/t/25346475391617815/" target="_blank">
                 <div className={cx("footer__top-social-item")}>
                   <img className={cx("footer__top-social-img")} src={images.messenger} alt="" />
                 </div>
